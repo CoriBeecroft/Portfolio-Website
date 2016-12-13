@@ -1,0 +1,121 @@
+header
+{	
+/*	background-image: url("../images/walking-short.jpg");
+	background-color: rgba(0, 0, 0, 0.5);*/
+	text-align: center;
+	padding: 50px;
+	padding-bottom: 60px;
+}
+
+header h1
+{
+	font-size: 102px;
+}
+
+.color0
+{
+	background-color: #8B7B86;
+	color: #190D25;
+}
+
+.color1
+{
+	background-color: #190D25;
+	color: #F3EBD6;
+}
+
+.color2
+{
+	background-color: #F3EBD6;
+	color: #4E465C;
+}
+
+h2
+{
+	text-align: center;
+	font-size: 54px;
+}
+
+h4
+{
+	text-align: center;
+}
+
+.container
+{
+	max-width: 860px;
+}
+
+.tile
+{
+	padding-bottom: 45px;
+}
+
+#forty96 img
+{
+	float: left;
+	margin-right: 30px;
+}
+
+#doom-pet iframe
+{
+	float: right;
+	margin-left: 30px;
+}
+
+#forty96 p a
+{
+	text-align: center;
+}
+
+#about-me img
+{
+	max-height: 500px;
+	float: right;
+	margin-left: 30px;
+	margin-bottom: 30px;
+}
+
+#about-me 
+{
+	text-align: center;
+}
+
+@media(max-width: 768px)
+{
+	header h1
+	{
+		font-size: 70px;
+	}
+
+	h2
+	{
+		font-size: 52px;
+	}
+
+	#forty96 img
+	{
+		float: none;
+		margin: auto;
+		margin-bottom: 30px;
+	}
+}
+
+@media(max-width: 992px)
+{
+	#doom-pet iframe
+	{
+		float: none;
+		display: block;
+		margin: auto;
+		margin-bottom: 30px;
+	}
+}
+
+@media(max-width: 635px)
+{
+	#doom-pet iframe
+	{
+		width: 100%;
+	}
+}
