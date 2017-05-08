@@ -3,6 +3,9 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+  		<meta name="description" content="Cori Beecroft's Portfolio Website">
+  		<meta name="keywords" content="Cori, Beecroft, Software, Engineer, Math, Computer Science">
+  		<meta name="author" content="Cori Beecroft">
 	
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="styles/styles.css" />
@@ -16,116 +19,94 @@
 	<body>
 		<header class="color0">
 			<h1>Cori Beecroft</h1>
-			<span><a href="mailto:coribeecroft@gmail.com">coribeecroft@gmail.com</a><br><a href="https://github.com/CoriBeecroft">https://github.com/CoriBeecroft</a></span>
+			<a href="mailto:coribeecroft@gmail.com">coribeecroft@gmail.com</a><br><a href="https://github.com/coribeecroft">https://github.com/coribeecroft</a>
 		</header>
 
 		<main>
 			<!-- Introduction -->
 			<div id="intro" class="tile color1">
 				<div class="container">
-					<div class="row">
-						<h2 class="col-lg-12">Introduction:</h2>
-					</div>
-
-					<div>
-						<div>
-							<!-- <img class="img-responsive" src="images/forest.jpg"> -->
-						</div>
-						<p>
-							I'm a graduate from CU Boulder with a degree in math and a minor in computer science. This website is a place for me to share some of my programming projects. 
-						</p>
-					</div>
+					<h2 class="col-lg-12">Introduction:</h2>
+					<!-- <img class="img-responsive" src="images/forest.jpg"> -->
+					<p>I'm a graduate from CU Boulder with a degree in math and a minor in computer science. This website is a place for me to share some of my programming projects. </p>
 				</div>
-			</div>			
+			</div>
 
 			<!-- 4096 -->
 			<div id="forty96" class="tile color2">
 				<div class="container">
-					<div class="row">
-						<h2 class="col-lg-12">4096</h2>
-						<h4><a href="../4096/index.html" target="_blank">(Click here to play 4096!)</a></h4>
-					</div>
+					<h2 class="col-lg-12">4096</h2>
+					<h4><a href="../4096/index.html" target="_blank">(Click here to play 4096!)</a></h4>
 
-					<div>
-						<div>
-							<img class="img-responsive" title="4096" alt="4096" src="images/4096.png">
-						</div>
-						<div>
-							<h3>Description:</h3>
-							<p>A remake of the game <a href="https://gabrielecirulli.github.io/2048/" target="_blank">2048</a>, except instead of just manually moving tiles around to get to the 2048 tile, players have the option to specify an algorithm for moving tiles in order to get the 4096 tile.</p>
-							
-							<h3>Inspiration: </h3>
-							<p>After playing 2048 for a while, I realized I was subconsciously developing a simple algorithm for playing the game. I was pretty sure I could come up with a good enough algorithm for gameplay that it could probably get far past the 2048 tile. This seemed like more fun to me than playing the game, so I made 4096. </p>
-							
-							<h3>Why it isn't finished: </h3>
-							<p>
-								I really enjoyed working on this project, but I sort of lost my motivation for working on it when I answered these two questions: <br>
-								<ol>
-									<li>What is the highest valued tile that it is possible to reach?
-									<br>131,072</li>
-									<br>
-									<li>What sort of algorithm could be used to reach the tile with the highest possible value?<br>
-									I don't have all the details here worked out, but I believe it would have to do with maintaining a graph where tiles are the nodes and there are edges between adjacent tiles where one tile is 2^n and the other is 2^(n+1). From here, the basic idea is to alternate between moving tiles to create longer paths and merging tiles to collapse longest paths. </li>
-								</ol>
-								I still think it's a cool idea and I would actually like to finish this project so I can test out my algorithm, it's just not really a priority right now. 
-							</p>
-							
-							<h3>To Do: </h3>
-							<ul>
-								<li>Improve GUI</li>
-								<ul>
-									<li>Show a list of helper functions available to the user</li>
-									<li>Give the user some idea of what the context in which their code will be executed is, or else come up with a default algorithm displayed in the text area that clearly conveys this</li>
-									<li>Speed control for automation</li>
-								</ul>
-								<li>Improve the setup for writing an algorithm</li>
-								<ul>
-									<li>Spend some time writing a few different algorithms for gameplay in order to understand what basic functions are needed for writing a gameplay algorithm(e.g. function to find the highest valued tile, function that returns number of possible moves or merges for a given direction, function that can search for a specified pattern in the grid, etc.)</li>
-									<li>Write and document aforementioned functions</li>
-								</ul>
-								<li>Make it so the game can be automatically run several times in a row and statistics about the runs will be shown(e.g. highest tile reached, how many moves it took, etc.)</li>
-							</ul>
+					<img class="img-responsive" title="4096" alt="4096" src="images/4096.png">
 
-							<h3>GitHub: </h3>
-							<p><a href="https://github.com/CoriBeecroft/4096" target="_blank">https://github.com/CoriBeecroft/4096</a></p>
-						</div>	
-					</div>
+					<h3>Description:</h3>
+					<p>A remake of the game <a href="https://gabrielecirulli.github.io/2048/" target="_blank">2048</a>, except instead of just manually moving tiles around to get to the 2048 tile, players have the option to specify an algorithm for moving tiles in order to get the 4096 tile.</p>
+					
+					<h3>Inspiration: </h3>
+					<p>After playing 2048 for a while, I realized I was subconsciously developing a simple algorithm for playing the game. I was pretty sure I could come up with a good enough algorithm for gameplay that it could probably get far past the 2048 tile. This seemed like more fun to me than playing the game, so I made 4096. </p>
+					
+					<h3>Why it isn't finished: </h3>
+					<p>
+						I really enjoyed working on this project, but I sort of lost my motivation for working on it when I answered these two questions: <br>
+						<ol>
+							<li>What is the highest valued tile that it is possible to reach?
+							<br>131,072</li>
+							<br>
+							<li>What sort of algorithm could be used to reach the tile with the highest possible value?<br>
+							I don't have all the details here worked out, but I believe it would have to do with maintaining a graph where tiles are the nodes and there are edges between adjacent tiles where one tile is 2^n and the other is 2^(n+1). From here, the basic idea is to alternate between moving tiles to create longer paths and merging tiles to collapse longest paths. </li>
+						</ol>
+						I still think it's a cool idea and I would actually like to finish this project so I can test out my algorithm, it's just not really a priority right now. 
+					</p>
+					
+					<h3>To Do: </h3>
+					<ul>
+						<li>Improve GUI</li>
+						<ul>
+							<li>Show a list of helper functions available to the user</li>
+							<li>Give the user some idea of what the context in which their code will be executed is, or else come up with a default algorithm displayed in the text area that clearly conveys this</li>
+							<li>Speed control for automation</li>
+						</ul>
+						<li>Improve the setup for writing an algorithm</li>
+						<ul>
+							<li>Spend some time writing a few different algorithms for gameplay in order to understand what basic functions are needed for writing a gameplay algorithm(e.g. function to find the highest valued tile, function that returns number of possible moves or merges for a given direction, function that can search for a specified pattern in the grid, etc.)</li>
+							<li>Write and document aforementioned functions</li>
+						</ul>
+						<li>Make it so the game can be automatically run several times in a row and statistics about the runs will be shown(e.g. highest tile reached, how many moves it took, etc.)</li>
+					</ul>
+
+					<h3>GitHub: </h3>
+					<a href="https://github.com/coribeecroft/4096" target="_blank">https://github.com/coribeecroft/4096</a>
 				</div>
 			</div>
 			
 			<!-- Doom Pet -->
 			<div id="doom-pet" class="tile color0">
 				<div class="container">
-					<div class="row">
-						<h2 class="col-lg-12">Doom Pet</h2>
-					</div>
-					<div>
-						<div>
-							<iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/wcwLZ3V3lmE?autoplay=0" frameborder="0" allowfullscreen></iframe>
-						</div>
-						<div>
-							<h3>Description:</h3>
-							<p>A virtual pet game using graphics from id Software's original Doom games. This project is unfinished, but in its current state the game has the following functions: </p>
-							<ul>
-								<li>press 'f' to feed the pet</li>
-								<li>press 'p' to poke the pet, to which he will respond by turning and looking at you </li>
-								<li>press 'd' to trigger the death animation </li>
-								<li>do nothing, the pet will walk back and forth in his environment</li>
-							</ul>
+					<h2 class="col-lg-12">Doom Pet</h2>
+					
+					<iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/wcwLZ3V3lmE?autoplay=0" frameborder="0" allowfullscreen></iframe>
 
-							<h3>Inspiration: </h3>
-							<p>I was looking for a project to work on between semesters one year and my brother suggested that I make a game using a simple game framework that he wrote. We figured it would be a good way for me to get some experience working with someone else's code and it would allow me to focus on some of the more interesting and fun parts of making a game. Though, I suspect he was just trying to get someone to test his framework because I ended up finding and fixing a lot of bugs while I was using it.</p>
+					<h3>Description:</h3>
+					<p>A virtual pet game using graphics from id Software's original Doom games. This project is unfinished, but in its current state the game has the following functions: </p>
+					<ul>
+						<li>press 'f' to feed the pet</li>
+						<li>press 'p' to poke the pet, to which he will respond by turning and looking at you </li>
+						<li>press 'd' to trigger the death animation </li>
+						<li>do nothing, the pet will walk back and forth in his environment</li>
+					</ul>
 
-							<h3>To Do: </h3>
-							<p>I don't really have any plans to finish this project since I was mostly writing it to practice programming. I do still really like the idea, but a virtual pet game doesn't really make much sense as a desktop application. If I ever do finish this project, I'll probably start over and make it a mobile app.</p>
+					<h3>Inspiration: </h3>
+					<p>I was looking for a project to work on between semesters one year and my brother suggested that I make a game using a simple game framework that he wrote. We figured it would be a good way for me to get some experience working with someone else's code and it would allow me to focus on some of the more interesting and fun parts of making a game. Though, I suspect he was just trying to get someone to test his framework because I ended up finding and fixing a lot of bugs while I was using it.</p>
 
-							<h3>GitHub: </h3>
-							<p>
-								<span class="note">Note: I wrote this long before I ever had a GitHub account so there isn't a record of commits for most of the work I did on it, but I wrote everything in the "beefarm" package and occasionally made edits in the "cyntaks" package which contains my brother's framework.</span><br><br>
-								<a href="https://github.com/CoriBeecroft/DoomPet" target="_blank">https://github.com/CoriBeecroft/DoomPet</a>
-							</p>
-						</div>	
-					</div>
+					<h3>To Do: </h3>
+					<p>I don't really have any plans to finish this project since I was mostly writing it to practice programming. I do still really like the idea, but a virtual pet game doesn't really make much sense as a desktop application. If I ever do finish this project, I'll probably start over and make it a mobile app.</p>
+
+					<h3>GitHub: </h3>
+					<p>
+						<span class="note">Note: I wrote this long before I ever had a GitHub account so there isn't a record of commits for most of the work I did on it, but I wrote everything in the "beefarm" package and occasionally made edits in the "cyntaks" package which contains my brother's framework.</span><br><br>
+						<a href="https://github.com/coribeecroft/DoomPet" target="_blank">https://github.com/coribeecroft/DoomPet</a>
+					</p>
 				</div>
 			</div>
 
