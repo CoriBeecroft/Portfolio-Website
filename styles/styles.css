@@ -88,6 +88,17 @@ h4
 	text-align: center;
 }
 
+footer
+{
+	padding: 20px;
+	padding-top: 30px;
+}
+
+footer span
+{
+	float: right;
+}
+
 @media(max-width: 768px)
 {
 	header h1
