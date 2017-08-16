@@ -1,13 +1,13 @@
 header
 {	
 	text-align: center;
-	padding: 50px;
-	padding-bottom: 60px;
+	padding: 20px;
+	margin: auto;
 }
 
-header h1
+header img
 {
-	font-size: 102px;
+	margin: auto;
 }
 
 a
