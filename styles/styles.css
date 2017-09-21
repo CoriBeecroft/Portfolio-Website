@@ -74,6 +74,12 @@ section
 	padding-bottom: 45px;
 }
 
+#HNFE img
+{
+	max-width: 500px;
+	float: right;
+}
+
 #forty96 img
 {
 	float: left;
@@ -133,11 +139,20 @@ footer .container p
 
 	#forty96 img
 	{
-		max-width: 300px;
+		max-width: 400px;
 		float: none;
 		margin: auto;
 		margin-bottom: 30px;
 	}
+
+	#HNFE img
+	{
+		max-width: 500px;
+		float: none;
+		margin: auto;
+		margin-bottom: 30px;
+	}
+	
 }
 
 @media(max-width: 992px)
@@ -156,5 +171,10 @@ footer .container p
 	#doom-pet iframe
 	{
 		width: 100%;
+	}
+
+	#forty96 img, #HNFE img
+	{
+		max-width: 350px;
 	}
 }

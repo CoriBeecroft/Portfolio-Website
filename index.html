@@ -79,8 +79,68 @@
 				</div>
 			</div>
 
+			<!-- Hacker News Frontend -->
+			<div id="HNFE" class="tile color0">
+				<div class="container">
+					<h2 class="col-lg-12">Hacker News Frontend</h2>
+					<h4><a href="../hacker-news-frontend/index.html" target="_blank">(Click here to see Hacker News frontend!)</a></h4>
+
+					<img class="img-responsive" title="4096" alt="4096" src="images/HN.png">
+
+					<section>
+						<h3>Description:</h3>
+						<p>A new frontend for YCombinator's <a href="https://news.ycombinator.com/">Hacker News</a>.</p>	
+					</section>
+					
+					<section>
+						<h3>Inspiration: </h3>
+						<p>I needed a project to help me learn React. I enjoy reading Hacker News and I recently heard that they have a public API so I decided to make a new front end with the UI tailored to my own Hacker News reading preferences. </p>
+					</section>
+
+					<section>
+						<h3>Features</h3>
+						<ul>
+							<li>Automatically opens links to stories in a new tab</li>
+							<li>Displays story comments on the same page as the story list</li>
+							<li>Periodically updates content behind the scence. So you can leave the tab open for hours or days and know that when you come back to it the content with be relatively up-to-date</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Limitations of the API</h3>
+						<ul>
+							<li>Have to send a separate AJAX request for each story and for each comment</li>
+							<li>The number of comments that a story has is not provided. In order to get this number, you have to traverse the entire comment tree and count them. Since each comment requires a separate AJAX request and my page shows 30 stories, this would be massively inefficient. I am considering ways of getting around this(just for fun), but I'll most likely just switch to the Firebase API at some point.</li>
+<!-- 							<li></li>
+							<li></li>
+							<li></li> -->
+						</ul>
+					</section>
+
+					<section>
+						<h3>Areas For Improvement: </h3>
+						<ul>
+							<li>Make it responsive</li>
+							<li>Make it an infinite scroller</li>
+							<li>Make a users profile page</li>
+							<li>Make ask, show and job story lists(currently only top stories are shown)</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h3>Written With: </h3>
+						<p>JavaScript, React, jQuery HTML, CSS</p>
+					</section>
+
+					<section>
+						<h3>GitHub: </h3>
+						<a href="https://github.com/coribeecroft/hacker-news-frontend" target="_blank">https://github.com/coribeecroft/hacker-news-frontend</a>
+					</section>
+				</div>
+			</div>
+
 			<!-- Nesting Docs -->
-			<div id="nesting-docs" class="tile color0">
+			<div id="nesting-docs" class="tile color1">
 				<div class="container">
 					<div class="row">
 						<h2 class="col-lg-12">Nesting Docs</h2>
@@ -120,7 +180,7 @@
 			</div>
 
 			<!-- DSV -->
-			<div id="lucidity" class="tile color1">
+			<div id="lucidity" class="tile color2">
 				<div class="container">
 					<div class="row">
 						<h2 class="col-lg-12">Lucidity</h2>
@@ -170,7 +230,7 @@
 			</div>
 
 			<!-- Doom Pet -->
-			<div id="doom-pet" class="tile color2">
+			<div id="doom-pet" class="tile color0">
 				<div class="container">
 					<h2 class="col-lg-12">Doom Pet</h2>
 					
@@ -202,7 +262,7 @@
 
 		</main>
 
-		<footer class="color0">
+		<footer class="color1">
 			<div class="container">
 				<span>
 					<a href="mailto:coribeecroft@gmail.com">E-mail</a>
