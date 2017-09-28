@@ -1,3 +1,8 @@
+body
+{
+	font-size: 1.5em;
+}
+
 header
 {	
 	text-align: center;
@@ -78,6 +83,7 @@ section
 {
 	max-width: 500px;
 	float: right;
+	margin: 5px;
 }
 
 #forty96 img
