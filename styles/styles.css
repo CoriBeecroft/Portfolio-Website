@@ -86,6 +86,14 @@ section
 	margin: 5px;
 }
 
+#HNFE span
+{
+	font-size: 0.85em;
+	font-style: italic;
+	display: block;
+	margin-bottom: 10px;
+}
+
 #forty96 img
 {
 	float: left;
