@@ -1,178 +1,112 @@
-body
-{
-	font-size: 1.5em;
-}
+body { font-size: 1.5em; }
 
-header
-{	
+header {
 	text-align: center;
 	padding: 20px;
 	margin: auto;
 }
 
-header img
-{
-	margin: auto;
-}
+header img { margin: auto; }
 
-a
-{
-	text-decoration: underline;
-}
+a { text-decoration: underline; }
+a:hover { font-weight: bold; }
 
-a:hover
-{
-	font-weight: bold;
-}
-
-.color0, .color0 a
-{
+.color0, .color0 a {
 	background-color: #8B7B86;
 	color: #190D25;
 }
 
-.color1, .color1 a
-{
+.color1, .color1 a {
 	background-color: #190D25;
 	color: #F3EBD6;
 }
 
-.color2, .color2 a
-{
+.color2, .color2 a {
 	background-color: #F3EBD6;
 	color: #4E465C;
 }
 
-h2
-{
+h2 {
 	text-align: center;
 	font-size: 54px;
 }
 
-h3
-{
-	margin-bottom: 8px;
-}
+h3 { margin-bottom: 8px; }
+h4 { text-align: center; }
+h5 { margin-top: 20px; }
+section { margin-bottom: 26px; }
+.container { max-width: 860px; }
+.tile { padding-bottom: 45px; }
 
-h4
-{
-	text-align: center;
-}
-
-h5
-{
-	margin-top: 20px;
-}
-
-section
-{
-	margin-bottom: 26px;
-}
-
-.container
-{
-	max-width: 860px;
-}
-
-.tile
-{
-	padding-bottom: 45px;
-}
-
-#HNFE img
-{
+#HNFE img {
 	max-width: 500px;
 	float: right;
 	margin: 5px;
 }
 
-#HNFE span
-{
+#HNFE span {
 	font-size: 0.85em;
 	font-style: italic;
 	display: block;
 	margin-bottom: 10px;
 }
 
-#forty96 img
-{
+#forty96 img {
 	float: left;
 	max-width: 400px;
 	margin-right: 30px;
 	margin-bottom: 5px;
 }
 
-#doom-pet iframe
-{
+#doom-pet iframe {
 	float: right;
 	margin-left: 30px;
 }
 
-#lucidity h5
-{
+#lucidity h5 {
 	font-style: italic;
 	text-decoration: underline;
 }
 
-#intro img
-{
+#intro img {
 	max-height: 500px;
 	float: right;
 	margin-left: 30px;
 	margin-bottom: 30px;
 }
 
-#intro
-{
-	text-align: center;
-}
+#intro { text-align: center; }
 
-footer .container
-{
+footer .container {
 	text-align: center;
 	padding-top: 30px;
 	padding-bottom: 15px;
 }
 
-footer .container p
-{
-	margin-top: 5px;
-}
+footer .container p { margin-top: 5px; }
 
-@media(max-width: 768px)
-{
-	header h1
-	{
-		font-size: 70px;
-	}
+@media(max-width: 768px) {
+	header h1 { font-size: 70px; }
 
-	h2
-	{
-		font-size: 52px;
-	}
+	h2 { font-size: 52px; }
 
-	#forty96 img
-	{
+	#forty96 img {
 		max-width: 400px;
 		float: none;
 		margin: auto;
 		margin-bottom: 30px;
 	}
 
-	#HNFE img
-	{
+	#HNFE img {
 		max-width: 500px;
 		float: none;
 		margin: auto;
 		margin-bottom: 30px;
 	}
-	
 }
 
-@media(max-width: 992px)
-{
-	#doom-pet iframe
-	{
+@media(max-width: 992px) {
+	#doom-pet iframe {
 		float: none;
 		display: block;
 		margin: auto;
@@ -180,15 +114,7 @@ footer .container p
 	}
 }
 
-@media(max-width: 635px)
-{
-	#doom-pet iframe
-	{
-		width: 100%;
-	}
-
-	#forty96 img, #HNFE img
-	{
-		max-width: 350px;
-	}
+@media(max-width: 635px) {
+	#doom-pet iframe { width: 100%; }
+	#forty96 img, #HNFE img { max-width: 350px; }
 }
