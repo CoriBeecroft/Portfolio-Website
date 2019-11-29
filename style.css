@@ -8,8 +8,15 @@ header {
 
 header img { margin: auto; }
 
-a { text-decoration: underline; }
-a:hover { font-weight: bold; }
+a {
+	text-decoration: underline;
+	font-weight: unset;
+	transition: font-weight 400ms;
+}
+a:hover {
+	font-weight: bold;
+	transition: font-weight 400ms;
+}
 
 .color0, .color0 a {
 	background-color: #8B7B86;
@@ -77,13 +84,12 @@ section { margin-bottom: 26px; }
 
 #intro { text-align: center; }
 
-footer .container {
+footer {
 	text-align: center;
-	padding-top: 30px;
-	padding-bottom: 15px;
+	padding-top: 45px;
 }
 
-footer .container p { margin-top: 5px; }
+footer p { margin-top: 5px; }
 
 @media(max-width: 768px) {
 	header h1 { font-size: 70px; }
