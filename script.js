@@ -202,7 +202,7 @@ const HNFE = () => {
     return <div id="HNFE">
         <h2 className="col-lg-12">Hacker News Front-End</h2>
         <h4>
-            <a href="../hacker-news-frontend/index.html" target="_blank">
+            <a href="../HNFE/" target="_blank">
                 (See Hacker News front-end)
             </a>
         </h4>
