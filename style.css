@@ -1,19 +1,8 @@
 body { font-size: 1.5em; }
-
-header {
-	text-align: center;
-	padding: 20px;
-	margin: auto;
-}
-
+header { margin: auto; }
 header img { margin: auto; }
-
-a {
-	text-decoration: underline;
-}
-a:hover {
-    text-decoration: none;
-}
+a { text-decoration: underline; }
+a:hover { text-decoration: none; }
 
 .color0, .color0 a {
 	background-color: #8B7B86;
@@ -36,18 +25,20 @@ a:hover {
 h2 {
 	text-align: center;
 	font-size: 54px;
+	margin-top: 0px;
 }
-
 h3 { margin-bottom: 8px; }
 h4 { text-align: center; }
 h5 { margin-top: 20px; }
 section { margin-bottom: 26px; }
-.container { max-width: 860px; }
-.tile { padding-bottom: 45px; }
-
-img.code-tutor, img.fireflies {
-    height: 300px;
+.tile-content {
+	max-width: 860px;
+	margin: auto;
 }
+.tile { padding: 4rem; }
+#intro { text-align: center; }
+
+img.code-tutor, img.fireflies { height: 300px; }
 
 #HNFE img {
 	max-width: 500px;
@@ -86,8 +77,6 @@ img.code-tutor, img.fireflies {
 	margin-bottom: 30px;
 }
 
-#intro { text-align: center; }
-
 footer {
 	text-align: center;
 	padding-top: 45px;
@@ -108,12 +97,12 @@ footer p { margin-top: 5px; }
 	}
 
 	#HNFE img {
-		max-width: 4500px;
+		max-width: 450px;
 		float: none;
 		margin: auto;
 		margin-bottom: 30px;
     }
-    
+
     img.code-tutor, img.fireflies { height: 225px; margin: 10px; }
 }
 
@@ -129,4 +118,8 @@ footer p { margin-top: 5px; }
 @media(max-width: 635px) {
 	#doom-pet iframe { width: 100%; }
 	#forty96 img, #HNFE img { max-width: 295px; }
+}
+
+@media(min-width: 768px) {
+	.tile-content { max-width: 775px; }
 }
