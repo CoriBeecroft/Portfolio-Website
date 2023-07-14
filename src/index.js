@@ -1,4 +1,7 @@
+import React from "react";
+import { createRoot } from "react-dom/client";
 
+import "./style.scss";
 const PortfolioPage = () => {
     return <div>
         {[
@@ -137,7 +140,7 @@ function Project(props) {
             </section>
             { props.myContribution && <section>
                 <h3>My Contribution:</h3>
-                <p>{ props.myContribution }</p>
+                <div>{ props.myContribution }</div>
             </section>}
             { props.inspiration && <section>
                 <h3>Inspiration: </h3>
@@ -346,4 +349,5 @@ const Footer = () => (<footer>
 </footer>)
 
 const container = document.getElementById("site-container");
-ReactDOM.render(<PortfolioPage />, container);
+const root = createRoot(container);
+root.render(<PortfolioPage />);
