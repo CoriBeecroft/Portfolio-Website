@@ -58,9 +58,7 @@ const UpdatesComingSoon = () => {
         <section>
             <h3>Full Stack Development at NetToolKit</h3>
             <ul>
-                <li>
-                    Developed an experimental CAPTCHA service (full stack)
-                </li>
+                <li>Developed an experimental CAPTCHA service (full stack)</li>
                 <li>
                     Made a JavaScript map library that abstracts over Google Maps, Bing Maps and OpenLayers (front end)
                 </li>
@@ -87,7 +85,7 @@ const UpdatesComingSoon = () => {
             <div style={{ display: "flex", justifyContent: "center" }}>
                 <a target="_blank" href="images/fireflies.png">
                     <img { ...{
-                        className: "fireflies",
+                        className: "fireflies img-responsive",
                         title: "Fireflies",
                         alt: "Fireflies",
                         src: "images/fireflies.png",
@@ -107,7 +105,7 @@ const UpdatesComingSoon = () => {
             }}>
                 <a target="_blank" href="images/code-tutor-wireframe.jpg">
                     <img { ...{
-                        className: "code-tutor",
+                        className: "code-tutor img-responsive",
                         title: "Code Tutor Wireframe",
                         alt: "Code Tutor Wireframe",
                         src: "images/code-tutor-wireframe.jpg",
@@ -116,7 +114,7 @@ const UpdatesComingSoon = () => {
                 <div style={{ margin: "auto 10px" }}>&rarr;</div>
                 <a target="_blank" href="images/code-tutor.png">
                     <img { ...{
-                        className: "code-tutor",
+                        className: "code-tutor img-responsive",
                         title: "Code Tutor",
                         alt: "Code Tutor",
                         src: "images/code-tutor.png",
@@ -130,42 +128,50 @@ const UpdatesComingSoon = () => {
 function Project(props) {
     return <div id={ props.id } className="project">
         <h2>{ props.title }</h2>
-        { props.tagline && <h4>{ props.tagline }</h4> }
-        { props.image }
-        <section>
-            <h3>Description:</h3>
-            <p>{ props.description }</p>
-        </section>
-        { props.myContribution && props.myContribution}
-        { props.inspiration && <section>
-            <h3>Inspiration: </h3>
-            <p>{ props.inspiration }</p>
-        </section> }
-        { props.whatWasChallenging && <section>
-            <h3>What Was Challenging: </h3>
-            <p>{ props.whatWasChallenging }</p>
-        </section>
-        }
-        { props.todo && <section>
-            <h3>To Do: </h3>
-            <ul>{ props.todo.map((item, i) => <li key={ i }>{ item }</li>) }</ul>
-        </section> }
-        { props.areasForImprovement && <section>
-            <h3>Areas For Improvement: </h3>
-            <ul>
-                { props.areasForImprovement.map((item, i) => <li key={ i }>{ item }</li>) }
-            </ul>
-        </section> }
-        <section>
-            <h3>Written With: </h3>
-            <p>{ props.writtenWith }</p>
-        </section>
-        <section>
-            <h3>GitHub: </h3>
-            <a href={ props.gitHub} target="_blank">
-                { props.gitHub }
-            </a>
-        </section>
+        { props.tagline && <span className="tagline">{ props.tagline }</span> }
+        <div className="project-content">
+            { props.image }
+            <section>
+                <h3>Description:</h3>
+                <p>{ props.description }</p>
+            </section>
+            { props.myContribution && <section>
+                <h3>My Contribution:</h3>
+                <p>{ props.myContribution }</p>
+            </section>}
+            { props.inspiration && <section>
+                <h3>Inspiration: </h3>
+                <p>{ props.inspiration }</p>
+            </section> }
+            { props.whatWasChallenging && <section>
+                <h3>What Was Challenging: </h3>
+                <p>{ props.whatWasChallenging }</p>
+            </section>
+            }
+            { props.todo && <section>
+                <h3>To Do: </h3>
+                <ul>{ props.todo.map((item, i) => <li key={ i }>{ item }</li>) }</ul>
+            </section> }
+            { props.areasForImprovement && <section>
+                <h3>Areas For Improvement: </h3>
+                <ul>
+                    { props.areasForImprovement.map((item, i) => <li key={ i }>{ item }</li>) }
+                </ul>
+            </section> }
+            <section>
+                <h3>Written With: </h3>
+                <p>{ props.writtenWith }</p>
+            </section>
+            <section>
+                <h3>GitHub: </h3>
+                { props.gitHub.startsWith("http") ?
+                    <a href={ props.gitHub} target="_blank">
+                        { props.gitHub }
+                    </a> :
+                    props.gitHub
+                }
+            </section>
+        </div>
     </div>
 }
 
@@ -175,7 +181,7 @@ const projects = [{
     tagline: <a href="../HNFE/" target="_blank">
         (See Hacker News front-end)
     </a>,
-    image: <img className="img-responsive" title="4096" alt="4096" src="images/HN.png" />,
+    image: <img className="img-responsive" title="Hacker News Front End" alt="Screenshot of Hacker News Front End project" src="images/hnfe.png" />,
     description: <React.Fragment>
         { "A front-end for "}
         <a href="https://news.ycombinator.com/">Hacker News</a>
@@ -230,7 +236,6 @@ const projects = [{
     tagline: <a href="http://coribeecroft.com/LODEssay" target="_blank">
         (See a nesting doc)
     </a>,
-    // image: ,
     description: `Nesting Docs is a tool for creating HTML documents that
         can be read at varying levels of detail. The idea here
         is that different readers of a particular piece of
@@ -266,7 +271,6 @@ const projects = [{
     tagline: <a href="http://symbolflux.com/projects/avd" target="_blank">
         (More information on Lucidity)
     </a>,
-    // image: ,
     description: <React.Fragment>
         { "This is one of my brother's projects that I helped with. " +
         "It is a data structure and algorithm visualization tool " +
@@ -313,10 +317,9 @@ const projects = [{
 }, {
     id: "doom-pet",
     title: "Doom Pet",
-    // tagline:,
     image: <iframe { ...{
         className: "embed-responsive-item",
-        width: "560",
+        width: "500",
         height: "315",
         src: "https://www.youtube.com/embed/wcwLZ3V3lmE?autoplay=0",
         frameBorder: "0",
