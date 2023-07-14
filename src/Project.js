@@ -7,7 +7,7 @@ export function Project(props) {
         <h2>{ props.title }</h2>
         { props.tagline && <span className="tagline">{ props.tagline }</span> }
         <div className="project-content">
-            { props.preview }
+            <div className="preview">{ props.preview }</div>
             <section>
                 <h3>Description:</h3>
                 <p>{ props.description }</p>
@@ -19,6 +19,10 @@ export function Project(props) {
             { props.inspiration && <section>
                 <h3>Inspiration: </h3>
                 <p>{ props.inspiration }</p>
+            </section> }
+            { props.usageInstructions && <section>
+                <h3>Instructions for Use: </h3>
+                <ul>{ props.usageInstructions.map((item, i) => <li key={ i }>{ item }</li>) }</ul>
             </section> }
             { props.whatWasChallenging && <section>
                 <h3>What Was Challenging: </h3>

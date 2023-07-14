@@ -49,6 +49,7 @@ function ContactInfo() {
         <a href="https://www.linkedin.com/in/cori-beecroft-9546446b/" target="_blank">LinkedIn</a>
     </span>
 }
+
 const UpdatesComingSoon = () => {
     return <div>
         <h2>Quick Update</h2>
@@ -73,27 +74,6 @@ const UpdatesComingSoon = () => {
                     </ul>
                 </li>
             </ul>
-        </section>
-        <section>
-            <h3 style={{ display: "inline-block", marginRight: "5px" }}>Fireflies</h3>
-            <a href="../fireflies" target="_blank">(See Fireflies)</a>
-            <p>A graphical demo built on React. I made this for fun on a weekend.</p>
-            <ul>
-                <li>Click to add a new firefly</li>
-                <li>Click and hold to grow a new firefly</li>
-                <li>Click and hold for a while after the firefly stops growing for an Easter egg :)</li>
-                <li>Optionally specify number of fireflies in the query string using "numFireflies"</li>
-            </ul>
-            <div style={{ display: "flex", justifyContent: "center" }}>
-                <a target="_blank" href="images/fireflies.png">
-                    <img { ...{
-                        className: "fireflies img-responsive",
-                        title: "Fireflies",
-                        alt: "Screenshot of Fireflies project",
-                        src: "images/fireflies.png",
-                    }} />
-                </a>
-            </div>
         </section>
         <section>
             <h3>Code Tutor</h3>

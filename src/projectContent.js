@@ -1,43 +1,106 @@
 import React from "react";
 
+// template for project
+/* {
+    id: "",
+    title: "",
+    tagline: <a href="" target="_blank">
+        (See Project)
+    </a>,
+    preview: <a target="_blank" href="">
+        <img { ...{
+            className: "img-responsive",
+            title: "",
+            alt: "",
+            src: ""
+        }} />
+    </a>,
+    description: "",
+    inspiration: ``,
+    myContribution: <></>,
+    whatWasChallenging: ``,
+    areasForImprovement: [],
+    todo: [],
+    writtenWith: "",
+    gitHub: ""
+} */
+
 export const projects = [{
     id: "HNFE",
     title: "Hacker News Front End",
     tagline: <a href="../HNFE/" target="_blank">
         (See Hacker News front-end)
     </a>,
-    preview: <img { ...{
-        className: "img-responsive",
-        title: "Hacker News Front End",
-        alt: "Screenshot of Hacker News Front End project.",
-        src: "images/hnfe.png"
-    }} />,
+    preview: <a target="_blank" href="images/hnfe.png">
+        <img { ...{
+            className: "img-responsive",
+            title: "Hacker News Front End",
+            alt: "Screenshot of Hacker News Front End project.",
+            src: "images/hnfe.png"
+        }} />
+    </a>,
     description: <>
         { "A front-end for "}
         <a href="https://news.ycombinator.com/">Hacker News</a>
-        { ". The main purpose of this project was for me to learn React." }
+        { `. I wrote this initially as way to learn React but I like using 
+            it to read Hacker News so I've been gradually improving it.` }
     </>,
     inspiration: ``,
     todo: [
         "Make a better mobile interface",
-        "Make it an infinite scroller",
-        "Make a users profile page",
-        "Make ask, show and job story lists (currently only top stories are shown)",
+        "Make a user profile page",
+        <>
+            Improve performance for loading comments. (The Hacker News API makes this difficult.
+            { " " }
+            <a target="_blank" href="https://news.ycombinator.com/item?id=32541609">Discussion here.</a>)
+        </>,
     ], 
     writtenWith: "JavaScript, React, CSS",
     gitHub: "https://github.com/coribeecroft/hacker-news-frontend"
+}, {
+    id: "fireflies",
+    title: "Fireflies",
+    tagline: <a href="../fireflies" target="_blank">(See Fireflies)</a>,
+    preview: <a target="_blank" href="images/fireflies.png">
+        <img { ...{
+            className: "fireflies img-responsive",
+            title: "Fireflies",
+            alt: "Screenshot of Fireflies project",
+            src: "images/fireflies.png",
+        }} />
+    </a>,
+    description: "A graphical demo built on React. I made this for fun on a weekend.",
+    inspiration: ``,
+    usageInstructions: [
+        "Click to add a new firefly",
+        "Click and hold to grow a new firefly (doesn't work on touch screens atm)",
+        "Click and hold for a while after the firefly stops growing for an Easter egg :) (doesn't work on touch screens atm)",
+        "Optionally specify number of fireflies in the query string using \"numFireflies\"",
+    ],
+    // myContribution: <></>,
+    // whatWasChallenging: ``,
+    todo: [
+        "Fix performance problems",
+        "Fix issues with touch controls",
+        "Fix issues with window resizing",
+        "Make dragging add a trail of fireflies"
+    ],
+    writtenWith: "React, JavaScript",
+    gitHub: "https://github.com/CoriBeecroft/fireflies"
 }, {
     id: "forty96",
     title: "4096",
     tagline: <a href="../4096/index.html" target="_blank">
         (Play 4096)
     </a>,
-    preview: <img { ...{
-        className: "img-responsive",
-        title: "4096",
-        alt: "Screenshot of 4096 project.",
-        src: "images/4096.png",
-    }} />,
+    preview: <a target="_blank" href="images/4096.png">
+        <img { ...{
+            className: "img-responsive",
+            title: "4096",
+            alt: "Screenshot of 4096 project.",
+            src: "images/4096.png",
+        }} />
+    </a>,
     description: <>
         { "A scripted version of the game " }
         <a href="https://gabrielecirulli.github.io/2048/" target="_blank">2048</a>

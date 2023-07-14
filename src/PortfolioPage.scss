@@ -42,49 +42,13 @@ h5 {
 
 section { margin-bottom: 26px; }
 #intro { text-align: center; }
-img.code-tutor, img.fireflies { max-height: 300px; }
-
-#HNFE img {
-	max-width: 500px;
-	float: right;
-	margin-left: 12px;
-	margin-bottom: 12px;
-}
-
-#forty96 img {
-	float: right;
-	max-width: 400px;
-	margin-left: 12px;
-	margin-bottom: 12px;
-}
-
-#doom-pet iframe {
-	float: right;
-	margin-left: 30px;
-}
-
+img.code-tutor { max-height: 300px; }
 #lucidity h5 { font-style: italic; }
 footer { text-align: center; }
 footer p { margin: 4px 0px 0px 0px; }
 
 @media(max-width: 768px) {
-	#forty96 img {
-		max-width: 100%;
-		float: none;
-		margin: auto;
-		display: block;
-		margin-bottom: 20px;
-	}
-
-	#HNFE img {
-		display: block;
-		max-width: 100%;
-		float: none;
-		margin: auto;
-		margin-bottom: 20px;
-    }
-
-    img.code-tutor, img.fireflies { height: 225px; margin: 10px; }
+    img.code-tutor { height: 225px; margin: 10px; }
 }
 
 @media(max-width: 992px) {
