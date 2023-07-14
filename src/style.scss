@@ -4,10 +4,16 @@ body {
 	margin: 0px;
 	line-height: 1.42;
 }
-header { margin: auto; }
-header img { margin: auto; }
-a { text-decoration: underline; }
-a:hover { text-decoration: none; }
+
+header {
+	margin: auto;
+	img { margin: auto; }
+}
+
+a {
+	text-decoration: underline;
+	&:hover { text-decoration: none; }
+}
 
 .img-responsive {
 	max-width: 100%;
@@ -58,24 +64,21 @@ span.tagline {
 	font-size: 1.2em;
 }
 section { margin-bottom: 26px; }
-.tile-content {
-	max-width: 860px;
-	margin: auto;
+
+.tile {
+	padding: 2rem;
+	.tile-content {
+		max-width: 860px;
+		margin: auto;
+	}
 }
-.tile { padding: 2rem; }
 #intro { text-align: center; }
 
 .project-content {
 	margin-top: 24px;
-}
-.project-content p, .project-content ul {
-	margin: 0px;
-}
-.project-content section {
-	margin-bottom: 20px;
-}
-.project-content section section {
-	margin-bottom: 16px;
+	p, ul { margin: 0px; }
+	section { margin-bottom: 20px; }
+	section section { margin-bottom: 16px; }
 }
 
 img.code-tutor, img.fireflies { max-height: 300px; }

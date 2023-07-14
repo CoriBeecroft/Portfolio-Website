@@ -20,7 +20,8 @@ const Header = () => <header>
     <img { ...{
         className: "img-responsive",
         src: "images/KeyName.png",
-        alt: "Picture of keys from a mac keyboard spelling out Cori Beecroft"
+        title: "Cori Beecroft",
+        alt: "Picture of keys from a Mac keyboard spelling out Cori Beecroft."
     }} />
 </header>
 
@@ -90,7 +91,7 @@ const UpdatesComingSoon = () => {
                     <img { ...{
                         className: "fireflies img-responsive",
                         title: "Fireflies",
-                        alt: "Fireflies",
+                        alt: "Screenshot of Fireflies project",
                         src: "images/fireflies.png",
                     }} />
                 </a>
@@ -110,7 +111,7 @@ const UpdatesComingSoon = () => {
                     <img { ...{
                         className: "code-tutor img-responsive",
                         title: "Code Tutor Wireframe",
-                        alt: "Code Tutor Wireframe",
+                        alt: "Photo of hand drawn Code Tutor wireframe",
                         src: "images/code-tutor-wireframe.jpg",
                     }} />
                 </a>
@@ -119,7 +120,7 @@ const UpdatesComingSoon = () => {
                     <img { ...{
                         className: "code-tutor img-responsive",
                         title: "Code Tutor",
-                        alt: "Code Tutor",
+                        alt: "Screenshot of Code Tutor project",
                         src: "images/code-tutor.png",
                     }} />
                 </a>
@@ -133,7 +134,7 @@ function Project(props) {
         <h2>{ props.title }</h2>
         { props.tagline && <span className="tagline">{ props.tagline }</span> }
         <div className="project-content">
-            { props.image }
+            { props.preview }
             <section>
                 <h3>Description:</h3>
                 <p>{ props.description }</p>
@@ -184,12 +185,17 @@ const projects = [{
     tagline: <a href="../HNFE/" target="_blank">
         (See Hacker News front-end)
     </a>,
-    image: <img className="img-responsive" title="Hacker News Front End" alt="Screenshot of Hacker News Front End project" src="images/hnfe.png" />,
-    description: <React.Fragment>
+    preview: <img { ...{
+        className: "img-responsive",
+        title: "Hacker News Front End",
+        alt: "Screenshot of Hacker News Front End project.",
+        src: "images/hnfe.png"
+    }} />,
+    description: <>
         { "A front-end for "}
         <a href="https://news.ycombinator.com/">Hacker News</a>
         { ". The main purpose of this project was for me to learn React." }
-    </React.Fragment>,
+    </>,
     inspiration: ``,
     todo: [
         "Make a better mobile interface",
@@ -205,17 +211,17 @@ const projects = [{
     tagline: <a href="../4096/index.html" target="_blank">
         (Play 4096)
     </a>,
-    image: <img { ...{
+    preview: <img { ...{
         className: "img-responsive",
         title: "4096",
-        alt: "4096",
+        alt: "Screenshot of 4096 project.",
         src: "images/4096.png",
     }} />,
-    description: <React.Fragment>
+    description: <>
         { "A scripted version of the game " }
         <a href="https://gabrielecirulli.github.io/2048/" target="_blank">2048</a>
         { " where players have the option to specify an algorithm for automated gameplay." }
-    </React.Fragment>,
+    </>,
     inspiration: `After playing 2048 for a while, I realized I was
         subconsciously developing a simple algorithm for playing
         the game. I was pretty sure I could come up with a good
@@ -274,7 +280,7 @@ const projects = [{
     tagline: <a href="http://symbolflux.com/projects/avd" target="_blank">
         (More information on Lucidity)
     </a>,
-    description: <React.Fragment>
+    description: <>
         { "This is one of my brother's projects that I helped with. " +
         "It is a data structure and algorithm visualization tool " +
         "that can be used for debugging or getting a better feel " +
@@ -282,8 +288,8 @@ const projects = [{
         "description of this project can be found " }
         <a href="http://westoncb.com/projects/avd" target="_blank">here</a>
         { "." }
-    </React.Fragment>,
-    myContribution: <React.Fragment>
+    </>,
+    myContribution: <>
         <section>
             <h5>High-level visual algorithm annotations for hash maps and trees</h5>
             <p>
@@ -314,13 +320,13 @@ const projects = [{
                 of navigating very large data structures).
             </p>
         </section>
-    </React.Fragment>,
+    </>,
     writtenWith: "Java",
     gitHub: "This project is in a private repository"
 }, {
     id: "doom-pet",
     title: "Doom Pet",
-    image: <iframe { ...{
+    preview: <iframe { ...{
         className: "embed-responsive-item",
         width: "500",
         height: "315",
