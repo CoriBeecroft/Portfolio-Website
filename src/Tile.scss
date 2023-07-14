@@ -1,0 +1,41 @@
+.tile {
+	padding: 2rem;
+
+	.tile-content {
+		max-width: 860px;
+		margin: auto;
+	}
+
+	&.color0 {
+		background-color: #8B7B86;
+		color: #190D25;
+		a {
+			color: #190D25;
+			&:hover { color: #4e455c; }
+		}
+	}
+
+	&.color1 {
+		background-color: #190D25;
+		color: #F3EBD6;
+		a {
+			color: #F3EBD6;
+			&:hover { color: #c8bfa7; }
+		}
+		
+	}
+
+	&.color2 {
+		background-color: #F3EBD6;
+		color: #4E465C;
+		a {
+			color: #4E465C;
+			&:hover { color: #7f6e91; }
+		}
+		
+	}
+}
+
+@media(min-width: 768px) {
+	.tile-content { max-width: 775px; }
+}
