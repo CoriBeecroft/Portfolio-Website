@@ -47,6 +47,37 @@ img.code-tutor { max-height: 300px; }
 footer { text-align: center; }
 footer p { margin: 4px 0px 0px 0px; }
 
+.contents section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	a:hover {
+		cursor: pointer;
+	}
+}
+
+.go-to-top {
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+	margin: 8px;
+	height: 50px;
+	width: 50px;
+	border-radius: 100%;
+	background-color: #525252c2;
+	transition: opacity 200ms;
+	color: #c4c4c4;
+	display: flex;
+	justify-content: center;
+
+	&:hover { cursor: pointer; }
+	div {
+		font-size: 45px;
+		position: relative;
+		top: 1px;
+	}
+}
+
 @media(max-width: 768px) {
     img.code-tutor { height: 225px; margin: 10px; }
 }

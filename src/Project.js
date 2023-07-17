@@ -3,7 +3,7 @@ import React from "react";
 import "./Project.scss";
 
 export function Project(props) {
-    return <div id={ props.id } className="project">
+    return <div className="project">
         <h2>{ props.title }</h2>
         { props.tagline && <span className="tagline">{ props.tagline }</span> }
         <div className="project-content">

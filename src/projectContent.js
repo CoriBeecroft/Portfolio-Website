@@ -51,8 +51,8 @@ export const projects = [{
         "Make a user profile page",
         <>
             Improve performance for loading comments. (The Hacker News API makes this difficult.
-            { " " }
-            <a target="_blank" href="https://news.ycombinator.com/item?id=32541609">Discussion here.</a>)
+            { " Discussion " }
+            <a target="_blank" href="https://news.ycombinator.com/item?id=32541609">here.</a>)
         </>,
     ], 
     writtenWith: "JavaScript, React, CSS",
@@ -120,7 +120,7 @@ export const projects = [{
         shown (e.g. highest tile reached, how many moves it
         took, etc.)`,
     ],
-    writtenWith: "JavaScript, JQuery, HTML, CSS",
+    writtenWith: "JavaScript, JQuery",
     gitHub: "https://github.com/coribeecroft/4096"
 
 }, {

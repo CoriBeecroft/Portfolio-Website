@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Project } from "./Project"
 import { projects } from "./projectContent"
 import { Tile } from "./Tile"
@@ -6,16 +6,32 @@ import { Tile } from "./Tile"
 import "./PortfolioPage.scss";
 
 export const PortfolioPage = () => {
+    const contentsRefs = useRef({})
+    const getContentsRefs = () => contentsRefs.current;
+
     return <div>
         {[
-            <Header />,
-            <Intro />,
-            <UpdatesComingSoon />,
-            ...projects.map(project => <Project { ...project } />),
-            <Footer />
-        ].map((section, i) => <Tile key={ i } index={ i }>
-            { section }
+            { content: <Header /> },
+            { content: <Contents getContentsRefs={ getContentsRefs } /> },
+            { content: <Intro />, id: "intro" },
+            { content: <UpdatesComingSoon />, id: "quick-update" },
+            ...projects.map(project => ({
+                content: <Project { ...project } />,
+                id: project.id
+            })),
+            { content: <Footer /> }
+        ].map(({ content, id }, i) => <Tile { ...{
+            key: i,
+            id,
+            index: i,
+            ...(id ? { ref: node => {
+                if(node) { contentsRefs.current[id] = node }
+                else { delete contentsRefs.current[id]; }
+            }} : {}),
+        }}>
+            { content }
         </Tile>) }
+        <GoToTop />
     </div>
 }
 
@@ -24,13 +40,14 @@ const Header = () => <header>
         className: "img-responsive",
         src: "images/KeyName.png",
         title: "Cori Beecroft",
-        alt: "Picture of keys from a Mac keyboard spelling out Cori Beecroft."
+        alt: `Picture of keys from a Mac keyboard spelling out "Cori Beecroft" 
+            with some letters replaced by numbers.`
     }} />
 </header>
 
 function Intro() {
-    return <div id="intro">
-        <h2>Introduction:</h2>
+    return <div>
+        <h2>Introduction</h2>
         <p>
             I'm a graduate from CU Boulder with a degree in math and a
             minor in computer science. This website is a place for me to
@@ -48,6 +65,57 @@ function ContactInfo() {
         { " | " }
         <a href="https://www.linkedin.com/in/cori-beecroft-9546446b/" target="_blank">LinkedIn</a>
     </span>
+}
+
+function GoToTop() {
+    const [ visible, setVisible ] = useState(window.scrollY !== 0);
+    const chevronUp = "\u2303"
+
+    useEffect(() => {
+        const updateVisibility = () => {
+            if(window.scrollY !== 0 && !visible) {
+                setVisible(true)
+            } else if(window.scrollY === 0 && visible) {
+                setVisible(false);
+            }
+        }
+        document.addEventListener("scroll", updateVisibility)
+
+        return () => document.removeEventListener(
+            "scroll",
+            updateVisibility
+        )
+    }, [ visible ])
+
+    const scrollToTop = () => window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth"
+    })
+
+    return <div className="go-to-top" onClick={ scrollToTop } style={{ opacity: visible ? 1 : 0 }}>
+        <div>{ chevronUp }</div>
+    </div>
+}
+
+function scrollToItem(id, getContentsRefs) {
+    getContentsRefs()[id].scrollIntoView({ behavior: "smooth" })
+}
+
+function Contents(props) {
+    return <div className="contents">
+        <h2>Contents</h2>
+        <section>
+            {[
+                { id: "intro", title: "Introduction" },
+                { id: "quick-update", title: "Quick Update" },
+                ...projects.map(({ id, title }) => ({ id, title }))
+            ].map(({ id, title })=> <a { ...{
+                key: id,
+                onClick: () => scrollToItem(id, props.getContentsRefs)
+            }}>{ title }</a>) }
+        </section>
+    </div>
 }
 
 const UpdatesComingSoon = () => {
