@@ -49,10 +49,13 @@ function Intro() {
     return <div>
         <h2>Introduction</h2>
         <p>
-            I'm a graduate from CU Boulder with a degree in math and a
-            minor in computer science. This website is a place for me to
-            share some of my programming projects.
+            I'm a software engineer with ~5 years of professional experience doing
+            full stack development. I have a BA in math (minor in computer science)
+            from the University of Colorado Boulder. This website is a place for me
+            to share some information on professional and personal projects I've 
+            worked on.
         </p>
+        <p>Currently available for hire and particularly interested in front end roles.</p>
 	   <ContactInfo />
     </div>
 }
