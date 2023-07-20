@@ -14,7 +14,7 @@ export const PortfolioPage = () => {
             { content: <Header /> },
             { content: <Contents getContentsRefs={ getContentsRefs } /> },
             { content: <Intro />, id: "intro" },
-            { content: <UpdatesComingSoon />, id: "quick-update" },
+            { content: <ProfessionalWorkAtNtk />, id: "ntk" },
             ...projects.map(project => ({
                 content: <Project { ...project } />,
                 id: project.id
@@ -111,7 +111,7 @@ function Contents(props) {
         <section>
             {[
                 { id: "intro", title: "Introduction" },
-                { id: "quick-update", title: "Quick Update" },
+                { id: "ntk", title: "Professional Work at NetToolKit" },
                 ...projects.map(({ id, title }) => ({ id, title }))
             ].map(({ id, title })=> <a { ...{
                 key: id,
@@ -121,60 +121,76 @@ function Contents(props) {
     </div>
 }
 
-const UpdatesComingSoon = () => {
+const ProfessionalWorkAtNtk = () => {
     return <div>
-        <h2>Quick Update</h2>
+        <h2>Professional Work at NetToolKit</h2>
         <section>
-            It has been a while since I've had a chance to update this site. 
-            I'm hoping to make some updates soon. Until then, here is a little
-            bit about what I've been up to recently.
+            <h3>Description</h3>
+            <p>
+                <a href="https://nettoolkit.com">NetToolKit</a> is a small company that offers
+                internet services for software developers. I spent ~4.5 years working there as
+                a full stack developer. During that time I had the opportunity to work on a lot
+                of projects and wear various hats.
+            </p>
         </section>
         <section>
-            <h3>Full Stack Development at NetToolKit</h3>
+            <h3>Projects</h3>
             <ul>
-                <li>Developed an experimental CAPTCHA service (full stack)</li>
-                <li>
-                    Made a JavaScript map library that abstracts over Google Maps, Bing Maps and OpenLayers (front end)
+                <li><a href="https://en.wikipedia.org/wiki/Tiled_web_map">Map Tile</a> Server:
+                    Set up a system for generating, updating and serving raster and vector map
+                    tiles based on OpenStreetMap data. Significantly improved performance for 
+                    raster tile requests.
+                    <div className="languages-technologies">
+                        Java, Bash, PostgreSQL, Docker, various open source tools
+                    </div>
+                </li>
+                <li>MapWrapper:
+                    A map library that provides a unified interface for interacting with Google
+                    Maps, Bing Maps, Mapbox GL JS and OpenLayers.
+                    <div className="languages-technologies">
+                        JavaScript, Google Maps, Bing Maps, Mapbox GL JS and OpenLayers
+                    </div>
                 </li>
                 <li>
-                    Developed or contributed to lots of smaller projects including:
+                    Documentation Pages: Designed layout/styling for public documentation pages
+                    for API endpoints and JavaScript libraries. Designed and implemented React
+                    components that made it possible to generate documentation pages by passing
+                    in a JSON object to a top level component.
+                </li>
+                <li>
+                    Developed or contributed to many other projects including:
                     <ul>
-                        <li>A tool for comparing geocoding providers (front end)</li>
-                        <li>Prototype for a somewhat unique software monitoring tool (full stack)</li>
-                        <li>Various internal libraries (mostly front end)</li>
+                        <li>
+                            Prototype for a somewhat unique software monitoring tool
+                            <div className="languages-technologies">
+                                Java, JavaScript, PostgreSQL, React, Redux
+                            </div>
+                        </li>
+                        <li>
+                            An experimental CAPTCHA service
+                            <div className="languages-technologies">
+                                Java, JavaScript, PostgreSQL, React
+                            </div>
+                        </li>
+                        <li>
+                            A tool for comparing geocoding providers
+                            <div className="languages-technologies">JavaScript, React</div>
+                        </li>
+                        <li>
+                            Various internal libraries and tools
+                            <div className="languages-technologies">
+                                Java, JavaScript, React
+                            </div>
+                        </li>
                     </ul>
                 </li>
             </ul>
         </section>
-        <section>
-            <h3>Code Tutor</h3>
-            <p>
-                Did front end work for a "code tutor" Electron app that I was 
-                working on with <a href="http://symbolflux.com">my brother</a>.
-            </p>
-            <div style={{
-                display: "flex",
-                flexWrap: "wrap"
-            }}>
-                <a target="_blank" href="images/code-tutor-wireframe.jpg">
-                    <img { ...{
-                        className: "code-tutor img-responsive",
-                        title: "Code Tutor Wireframe",
-                        alt: "Photo of hand drawn Code Tutor wireframe",
-                        src: "images/code-tutor-wireframe.jpg",
-                    }} />
-                </a>
-                <div style={{ margin: "auto 10px" }}>&rarr;</div>
-                <a target="_blank" href="images/code-tutor.png">
-                    <img { ...{
-                        className: "code-tutor img-responsive",
-                        title: "Code Tutor",
-                        alt: "Screenshot of Code Tutor project",
-                        src: "images/code-tutor.png",
-                    }} />
-                </a>
-            </div>
-        </section>
+        <div style={{
+            textAlign: "center",
+            fontSize: "1.2em",
+            fontWeight: 500, 
+        }}>More information on projects coming soon!</div>
     </div>
 }
 

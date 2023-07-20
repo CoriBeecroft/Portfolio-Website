@@ -1,16 +1,15 @@
 .project {
 	.project-content {
-		margin-top: 24px;
 		p, ul { margin: 0px; }
 		section { margin-bottom: 20px; }
 		section section { margin-bottom: 16px; }
 	}
 
-	span.tagline {
-		display: block;
+	div.tagline {
 		text-align: center;
 		font-weight: 500;
-		font-size: 1.2em;
+		font-size: 0.45em;
+		margin-top: 4px;
 	}
 
 	.preview {

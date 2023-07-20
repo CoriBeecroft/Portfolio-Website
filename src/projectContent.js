@@ -123,7 +123,7 @@ export const projects = [{
     writtenWith: "JavaScript, JQuery",
     gitHub: "https://github.com/coribeecroft/4096"
 
-}, {
+}, /* {
     id: "nesting-docs",
     title: "Nesting Docs",
     tagline: <a href="http://coribeecroft.com/LODEssay" target="_blank">
@@ -207,7 +207,7 @@ export const projects = [{
     </>,
     writtenWith: "Java",
     gitHub: "This project is in a private repository"
-}, {
+},  */{
     id: "doom-pet",
     title: "Doom Pet",
     preview: <iframe { ...{
@@ -217,12 +217,19 @@ export const projects = [{
         src: "https://www.youtube.com/embed/wcwLZ3V3lmE?autoplay=0",
         frameBorder: "0",
     }} allowFullScreen></iframe>,
-    description: "A virtual pet game using graphics from iD Software's original Doom games.",
+    description: <>
+        A virtual pet game using graphics from iD Software's original Doom games.
+        <div style={{ marginTop: 8 }}>
+            Note: This is a very old project. I wrote it over winter break when I
+            was in college. It really doesn't belong on this site anymore but people
+            seem to enjoy the video so I'm leaving it for now.
+        </div>
+    </>,
     whatWasChallenging: `This was a fairly large project with a lot of pieces so I
         got to solve a lot of interesting problems that varied from
        figuring out how to make projectile motion to creating
         systems for managing the states and behaviors of game
         entities (e.g. the pet, his food, etc).`,
     writtenWith: "Java, a simple game framework",
-    gitHub: "This project is in a private repository"
+    gitHub: "https://github.com/CoriBeecroft/DoomPet"
 }]

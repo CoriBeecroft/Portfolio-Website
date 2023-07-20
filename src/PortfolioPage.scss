@@ -25,7 +25,7 @@ h2 {
 	font-weight: 500;
 	font-size: 2.75em;
 	margin: 0px;
-	margin-bottom: 4px;
+	margin-bottom: 24px;
 	line-height: 1;
 }
 h3 {
@@ -40,6 +40,10 @@ h5 {
 	font-size: 1em;
 }
 
+.languages-technologies {
+	font-style: italic;
+	font-size: .9em;
+}
 section { margin-bottom: 26px; }
 #intro { text-align: center; }
 img.code-tutor { max-height: 300px; }
@@ -76,6 +80,11 @@ footer p { margin: 4px 0px 0px 0px; }
 		position: relative;
 		top: 1px;
 	}
+}
+
+#ntk {
+	p, ul { margin: 0px; }
+	section { margin-bottom: 20px; }
 }
 
 @media(max-width: 768px) {
