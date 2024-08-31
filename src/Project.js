@@ -12,19 +12,19 @@ export function Project(props) {
             <div className="preview">{ props.preview }</div>
             <section>
                 <h3>Description</h3>
-                <p>{ props.description }</p>
+                <div>{ props.description }</div>
             </section>
             { props.myContribution && <section>
                 <h3>My Contribution</h3>
                 <div>{ props.myContribution }</div>
             </section>}
-            { props.inspiration && <section>
-                <h3>Inspiration </h3>
-                <p>{ props.inspiration }</p>
-            </section> }
             { props.usageInstructions && <section>
                 <h3>Instructions for Use</h3>
                 <ul>{ props.usageInstructions.map((item, i) => <li key={ i }>{ item }</li>) }</ul>
+            </section> }
+            { props.inspiration && <section>
+                <h3>Inspiration </h3>
+                <p>{ props.inspiration }</p>
             </section> }
             { props.whatWasChallenging && <section>
                 <h3>What Was Challenging</h3>

@@ -17,6 +17,7 @@ import React from "react";
     </a>,
     description: "",
     inspiration: ``,
+    usageInstructions: []
     myContribution: <></>,
     whatWasChallenging: ``,
     areasForImprovement: [],
@@ -26,6 +27,45 @@ import React from "react";
 } */
 
 export const projects = [{
+    id: "hn-fish",
+    title: "Hacker News Fish",
+    tagline: <a href="../hn-fish/" target="_blank">
+        (See Hacker News Fish)
+    </a>,
+    preview: <a target="_blank" href="images/hn-fish.png">
+        <img { ...{
+            className: "img-responsive",
+            title: "Hacker News Fish",
+            alt: "Screenshot of Hacker News Fish project.",
+            src: "images/hn-fish.png"
+        }} />
+    </a>,
+    description: <>
+        { "A "}
+        <a href="https://news.ycombinator.com/">Hacker News</a>
+        { ` front-end where the stories are displayed on fish!` }
+    </>,
+    inspiration: `This was originally inspired by a comment my brother made about 
+        wanting to see Hacker News headlines in something like a stock ticker. I 
+        liked the idea but I wanted to make it into something more pleasant to 
+        look at. Why fish? Honestly, I'm not quite sure, haha. I know I had the 
+        water levels from Super Mario World in mind, even though I always hated 
+        those levels. Maybe I just had a deep longing for bodies of water after 
+        living in the Sonoran Desert for the last few years.`,
+    usageInstructions: [
+        "Click the headline on fish open the story in a new tab",
+        "Click on the fish to open up the comments section",
+        "Click and drag fish to move them around"
+    ],
+    todo: [
+        "Add more Hacker News features (different story types, 'pages' of stories, etc)",
+        "Do more testing and refining on mobile and touch screens",
+        "Usability tweaks (ex. there are are lot of pointer events on the fish which can be a bit confusing, especially since the pointer target is usually moving)",
+        "Bug fixes",
+    ],
+    writtenWith: "JavaScript, React, CSS",
+    gitHub: "https://github.com/coribeecroft/hacker-news-frontend"
+}, {
     id: "HNFE",
     title: "Hacker News Front End",
     tagline: <a href="../HNFE/" target="_blank">
