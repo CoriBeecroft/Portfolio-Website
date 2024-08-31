@@ -1,8 +1,7 @@
 import React from "react"
-import { Icon } from "./PortfolioPage"
+import { Icon } from "../PortfolioPage"
 
 import "./Project.scss"
-import { PortfolioPage } from "./PortfolioPage"
 
 export function Project({
     title,

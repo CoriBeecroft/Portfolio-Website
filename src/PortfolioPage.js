@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react"
-import { Project } from "./Project"
+import { Project } from "./components/Project"
 import { projects } from "./projectContent"
-import { Tile } from "./Tile"
+import { Tile } from "./components/Tile"
 
 import "./PortfolioPage.scss"
 
