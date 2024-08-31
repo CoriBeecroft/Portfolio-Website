@@ -1,39 +1,98 @@
+@use "variables" as vars;
+
 .tile {
-	padding: 2rem;
+    padding: 2rem;
 
-	.tile-content {
-		max-width: 860px;
-		margin: auto;
-	}
+    .tile-content {
+        max-width: 860px;
+        margin: auto;
+    }
 
-	&.color0 {
-		background-color: #8B7B86;
-		color: #190D25;
-		a {
-			color: #190D25;
-			&:hover { color: #4e455c; }
-		}
-	}
+    &.color0 {
+        // transform: rotate(0deg) perspective(20cm) rotateY(-5deg);
+        background-color: #8b7b86;
+        color: vars.$dark-purple;
 
-	&.color1 {
-		background-color: #190D25;
-		color: #F3EBD6;
-		a {
-			color: #F3EBD6;
-			&:hover { color: #c8bfa7; }
-		}
-	}
+        * {
+            border-color: vars.$dark-purple;
+        }
 
-	&.color2 {
-		background-color: #F3EBD6;
-		color: #4E465C;
-		a {
-			color: #4E465C;
-			&:hover { color: #7f6e91; }
-		}
-	}
+        svg {
+            fill: vars.$dark-purple;
+            transition: 200ms fill;
+
+            &:hover {
+                fill: #4e455c;
+            }
+        }
+
+        a {
+            color: vars.$dark-purple;
+            transition: 200ms color;
+
+            &:hover {
+                color: #4e455c;
+            }
+        }
+    }
+
+    &.color1 {
+        background-color: vars.$dark-purple;
+        color: #f3ebd6;
+
+        * {
+            border-color: #c8bfa7;
+        }
+
+        svg {
+            fill: #f3ebd6;
+            transition: 200ms fill;
+
+            &:hover {
+                fill: #c8bfa7;
+            }
+        }
+
+        a {
+            color: #f3ebd6;
+            transition: 200ms color;
+
+            &:hover {
+                color: #c8bfa7;
+            }
+        }
+    }
+
+    &.color2 {
+        background-color: #f3ebd6;
+        color: vars.$medium-purple-text;
+
+        * {
+            border-color: vars.$medium-purple-text;
+        }
+
+        svg {
+            fill: vars.$medium-purple-text;
+            transition: 200ms fill;
+
+            &:hover {
+                fill: #7f6e91;
+            }
+        }
+
+        a {
+            color: vars.$medium-purple-text;
+            transition: 200ms color;
+
+            &:hover {
+                color: #7f6e91;
+            }
+        }
+    }
 }
 
-@media(min-width: 768px) {
-	.tile-content { max-width: 775px; }
+@media (min-width: 768px) {
+    .tile-content {
+        max-width: 775px;
+    }
 }
