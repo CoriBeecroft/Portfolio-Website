@@ -1,40 +1,46 @@
-const path = require('path');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const TerserPlugin = require("terser-webpack-plugin");
+const path = require("path")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin")
+const TerserPlugin = require("terser-webpack-plugin")
 
 module.exports = {
-    entry: './src/index.js',
+    entry: "./src/index.js",
     output: {
-        filename: 'main.js',
-        path: path.resolve(__dirname, 'dist'),
+        filename: "main.js",
+        path: path.resolve(__dirname, "dist"),
     },
     mode: "development",
-    plugins: [ new MiniCssExtractPlugin() ],
+    // mode: "production",
+    plugins: [new MiniCssExtractPlugin()],
     module: {
-        rules: [{
-            test: /\.(?:js|mjs|cjs)$/,
-            exclude: /node_modules/,
-            use: {
-                loader: 'babel-loader',
-                options: {
-                    presets: [
-                        ['@babel/preset-env', { targets: "defaults" }]
-                    ]
-                }
-            }
-        }, {
-            test: /.s?css$/,
-            use: [ MiniCssExtractPlugin.loader, "css-loader", "sass-loader" ],
-        }, {
-            test: /\.svg$/,
-            use: ['@svgr/webpack'],
-        }]
+        rules: [
+            {
+                test: /\.(?:js|mjs|cjs)$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: [
+                            ["@babel/preset-env", { targets: "defaults" }],
+                        ],
+                    },
+                },
+            },
+            {
+                test: /.s?css$/,
+                use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+            },
+            {
+                test: /\.svg$/,
+                use: ["@svgr/webpack"],
+            },
+        ],
     },
     optimization: {
+        minimize: true,
         minimizer: [
             new CssMinimizerPlugin({ test: /\.scss$/i }),
-            new TerserPlugin({ test: /\.js(\?.*)?$/i })
+            new TerserPlugin({ test: /\.js(\?.*)?$/i }),
         ],
-    }
-};
+    },
+}

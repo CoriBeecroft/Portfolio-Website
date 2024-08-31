@@ -1,37 +1,37 @@
 {
-  "name": "portfolio-website",
-  "version": "1.0.0",
-  "description": "",
-  "private": true,
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/CoriBeecroft/Portfolio-Website.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/CoriBeecroft/Portfolio-Website/issues"
-  },
-  "homepage": "https://github.com/CoriBeecroft/Portfolio-Website#readme",
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.22.9",
-    "@babel/preset-env": "^7.22.9",
-    "@babel/preset-react": "^7.22.5",
-    "babel-loader": "^9.1.3",
-    "css-loader": "^6.8.1",
-    "css-minimizer-webpack-plugin": "^5.0.1",
-    "mini-css-extract-plugin": "^2.7.6",
-    "sass": "^1.63.6",
-    "sass-loader": "^13.3.2",
-    "webpack": "^5.88.1",
-    "webpack-cli": "^5.1.4"
-  }
+    "name": "portfolio-website",
+    "version": "1.0.0",
+    "description": "",
+    "private": true,
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/CoriBeecroft/Portfolio-Website.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/CoriBeecroft/Portfolio-Website/issues"
+    },
+    "homepage": "https://github.com/CoriBeecroft/Portfolio-Website#readme",
+    "dependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.22.9",
+        "@babel/preset-env": "^7.22.9",
+        "@babel/preset-react": "^7.22.5",
+        "babel-loader": "^9.1.3",
+        "css-loader": "^6.8.1",
+        "css-minimizer-webpack-plugin": "^5.0.1",
+        "mini-css-extract-plugin": "^2.7.6",
+        "sass": "^1.63.6",
+        "sass-loader": "^13.3.2",
+        "webpack": "^5.88.1",
+        "webpack-cli": "^5.1.4"
+    }
 }
