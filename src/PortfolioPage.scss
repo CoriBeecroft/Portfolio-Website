@@ -1,136 +1,75 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-size: 1em;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0px;
-    line-height: 1.42;
+    background-color: #06090d;
+    margin: 0px;
+    text-align: center;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    color: #e6e6e6;
+    line-height: 1.28;
+}
+
+h1 {
+    color: #f2f2f2;
 }
 
 header {
-    margin: auto;
-    img {
+    height: 100px;
+    width: 100%;
+    background-image: linear-gradient(#06090d, #091430);
+    padding: 0px 3rem;
+
+    .link-container {
+        height: 85px;
+        max-width: 1120px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         margin: auto;
+
+        .secondary-links {
+            display: flex;
+            justify-content: space-between;
+            width: 200px;
+        }
     }
 }
 
-a {
-    text-decoration: underline;
-    &:hover {
-        text-decoration: none;
-    }
+.intro {
+    position: absolute;
+    z-index: 1;
+    top: 17%;
+    left: 50%;
+    width: 33%;
 }
 
-.img-responsive {
-    max-width: 100%;
-    height: auto;
-}
+.sunset {
+    // This is set to get around a weird bug that creates a discolored
+    // rectangle below this element. It appears to be a Chrome bug. This
+    // fix is likely working because it's forcing this element onto a new
+    // layer so something is different about how it's being rendered.
+    backface-visibility: hidden;
+    position: relative;
+    width: 100%;
+    height: 50vw;
+    background-image: radial-gradient(
+        circle at 50% 350%,
+        #831a1a,
+        #091430 calc(100% - 100px)
+    );
 
-h2 {
-    text-align: center;
-    font-weight: 500;
-    font-size: 2.75em;
-    margin: 0px;
-    margin-bottom: 24px;
-    line-height: 1;
-}
-h3 {
-    margin: 0px;
-    margin-bottom: 12px;
-    font-size: 1.5em;
-    font-weight: 500;
-}
-h5 {
-    margin: 0px 0px 8px 0px;
-    font-weight: 500;
-    font-size: 1em;
-}
+    .hill-container {
+        position: absolute;
+        top: 60%;
+        width: 100%;
 
-.languages-technologies {
-    font-style: italic;
-    font-size: 0.9em;
-}
-section {
-    margin-bottom: 26px;
-}
-#intro {
-    text-align: center;
-}
-img.code-tutor {
-    max-height: 300px;
-}
-#lucidity h5 {
-    font-style: italic;
-}
-footer {
-    text-align: center;
-}
-footer p {
-    margin: 4px 0px 0px 0px;
-}
-
-.contents section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    a:hover {
-        cursor: pointer;
-    }
-}
-
-.go-to-top {
-    position: fixed;
-    bottom: 0px;
-    right: 0px;
-    margin: 1rem;
-    height: 50px;
-    width: 50px;
-    border-radius: 100%;
-    background-color: #525252c2;
-    transition: opacity 200ms;
-    color: #c4c4c4;
-    display: flex;
-    justify-content: center;
-
-    &:hover {
-        cursor: pointer;
-    }
-    div {
-        font-size: 45px;
-        position: relative;
-        top: 1px;
-    }
-}
-
-#ntk {
-    p,
-    ul {
-        margin: 0px;
-    }
-    section {
-        margin-bottom: 20px;
-    }
-}
-
-.contact-info {
-    a {
-        display: inline-block;
-        width: 28px;
-        margin: 6px;
-    }
-}
-
-@media (max-width: 768px) {
-    img.code-tutor {
-        height: 225px;
-        margin: 10px;
-    }
-}
-
-@media (max-width: 992px) {
-    #doom-pet iframe {
-        float: none;
-        display: block;
-        margin: auto;
-        margin-bottom: 20px;
-        max-width: 100%;
+        .hills {
+            width: 100%;
+        }
     }
 }

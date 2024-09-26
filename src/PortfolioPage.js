@@ -6,71 +6,33 @@ import { Tile } from "./components/Tile"
 import "./PortfolioPage.scss"
 
 export const PortfolioPage = () => {
-    const contentsRefs = useRef({})
-    const getContentsRefs = () => contentsRefs.current
-
     return (
-        <div>
-            {[
-                {
-                    content: (
-                        <>
-                            <Header />
-                            <Intro />
-                        </>
-                    ),
-                },
-                { content: <Contents getContentsRefs={getContentsRefs} /> },
-                { content: <ProfessionalWorkAtNtk />, id: "ntk" },
-                ...projects.map(project => ({
-                    content: <Project {...project} />,
-                    id: project.id,
-                })),
-                { content: <Footer /> },
-            ].map(({ content, id }, i) => (
-                <Tile
-                    {...{
-                        key: i,
-                        id,
-                        index: i,
-                        ...(id
-                            ? {
-                                  ref: node => {
-                                      if (node) {
-                                          contentsRefs.current[id] = node
-                                      } else {
-                                          delete contentsRefs.current[id]
-                                      }
-                                  },
-                              }
-                            : {}),
-                    }}
-                >
-                    {content}
-                </Tile>
-            ))}
-            <GoToTop />
-        </div>
+        <>
+            <Header />
+            <Hero />
+        </>
     )
 }
 
-const Header = () => (
-    <header>
-        <img
-            {...{
-                className: "img-responsive",
-                src: "images/KeyName.png",
-                title: "Cori Beecroft",
-                alt: `Picture of keys from a Mac keyboard spelling out "Cori Beecroft"
-            with some letters replaced by numbers.`,
-            }}
-        />
-    </header>
-)
-
-function Intro() {
+const Header = () => {
     return (
-        <div id="intro">
+        <header>
+            <div className="link-container">
+                <a>Cori Beecroft</a>
+                <div className="secondary-links">
+                    <a>about</a>
+                    <a>projects</a>
+                    <a>contact</a>
+                </div>
+            </div>
+        </header>
+    )
+}
+
+const Intro = () => {
+    return (
+        <div className="intro">
+            <h1>Cori Beecroft</h1>
             <p>
                 I'm a software engineer with ~5 years of professional experience
                 doing full stack development. I have a BA in math (minor in
@@ -78,221 +40,84 @@ function Intro() {
                 website is a place for me to share some information on
                 professional and personal projects I've worked on.
             </p>
-            <p>
-                Currently available for hire and particularly interested in
-                front end roles.
-            </p>
-            <ContactInfo />
         </div>
     )
 }
 
-function ContactInfo() {
+const Hero = () => {
     return (
-        <span className="contact-info">
-            <a href="mailto:coribeecroft@gmail.com">
-                <Icon type="envelope" />
-            </a>
-            <a href="https://github.com/coribeecroft" target="_blank">
-                <Icon type="git-hub" />
-            </a>
-            <a
-                href="https://www.linkedin.com/in/cori-beecroft-9546446b/"
-                target="_blank"
-            >
-                <Icon type="linked-in" />
-            </a>
-        </span>
-    )
-}
-
-export function Icon({ type }) {
-    if (type === "envelope") {
-        return (
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                {/* Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. */}
-                <path d="M64 112c-8.8 0-16 7.2-16 16l0 22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1l0-22.1c0-8.8-7.2-16-16-16L64 112zM48 212.2L48 384c0 8.8 7.2 16 16 16l384 0c8.8 0 16-7.2 16-16l0-171.8L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64l384 0c35.3 0 64 28.7 64 64l0 256c0 35.3-28.7 64-64 64L64 448c-35.3 0-64-28.7-64-64L0 128z" />
-            </svg>
-        )
-    } else if (type === "git-hub") {
-        return (
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
-                {/*Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.*/}
-                <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
-            </svg>
-        )
-    } else if (type === "linked-in") {
-        return (
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                {/* Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. */}
-                <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" />
-            </svg>
-        )
-    } else if (type === "chevron-up") {
-        return (
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 512 512"
-                style={{ fill: "#d9d9d9", width: 30 }}
-            >
-                {/* Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. */}
-                <path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z" />
-            </svg>
-        )
-    }
-}
-
-function GoToTop() {
-    const [visible, setVisible] = useState(window.scrollY !== 0)
-
-    useEffect(() => {
-        const updateVisibility = () => {
-            if (window.scrollY !== 0 && !visible) {
-                setVisible(true)
-            } else if (window.scrollY === 0 && visible) {
-                setVisible(false)
-            }
-        }
-        document.addEventListener("scroll", updateVisibility)
-
-        return () => document.removeEventListener("scroll", updateVisibility)
-    }, [visible])
-
-    const scrollToTop = () =>
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: "smooth",
-        })
-
-    return (
-        <div
-            className="go-to-top"
-            onClick={scrollToTop}
-            style={{ opacity: visible ? 1 : 0 }}
-        >
-            <Icon type="chevron-up" />
-        </div>
-    )
-}
-
-function scrollToItem(id, getContentsRefs) {
-    getContentsRefs()[id].scrollIntoView({ behavior: "smooth" })
-}
-
-function Contents(props) {
-    return (
-        <div className="contents">
-            <h2>Contents</h2>
-            <section>
-                {[
-                    { id: "ntk", title: "Professional Work at NetToolKit" },
-                    ...projects.map(({ id, title }) => ({ id, title })),
-                ].map(({ id, title }) => (
-                    <a
-                        {...{
-                            key: id,
-                            onClick: () =>
-                                scrollToItem(id, props.getContentsRefs),
-                        }}
-                    >
-                        {title}
-                    </a>
-                ))}
-            </section>
-        </div>
-    )
-}
-
-const ProfessionalWorkAtNtk = () => {
-    return (
-        <div>
-            <h2>Professional Work at NetToolKit</h2>
-            <section>
-                <h3>Description</h3>
-                <p>
-                    <a href="https://nettoolkit.com">NetToolKit</a> is a small
-                    company that offers internet services for software
-                    developers. I spent ~4.5 years working there as a full stack
-                    developer. During that time I had the opportunity to work on
-                    a lot of projects and wear various hats.
-                </p>
-            </section>
-            <section>
-                <h3>Projects</h3>
-                <ul>
-                    <li>
-                        <a href="https://en.wikipedia.org/wiki/Tiled_web_map">
-                            Map Tile
-                        </a>{" "}
-                        Server: Set up a system for generating, updating and
-                        serving raster and vector map tiles based on
-                        OpenStreetMap data. Significantly improved performance
-                        for raster tile requests.
-                        <div className="languages-technologies">
-                            Java, Bash, PostgreSQL, Docker, various open source
-                            tools
-                        </div>
-                    </li>
-                    <li>
-                        MapWrapper: A map library that provides a unified
-                        interface for interacting with Google Maps, Bing Maps,
-                        Mapbox GL JS and OpenLayers.
-                        <div className="languages-technologies">
-                            JavaScript, Google Maps, Bing Maps, Mapbox GL JS and
-                            OpenLayers
-                        </div>
-                    </li>
-                    <li>
-                        Documentation Pages: Designed layout/styling for public
-                        documentation pages for API endpoints and JavaScript
-                        libraries. Designed and implemented React components
-                        that made it possible to generate documentation pages by
-                        passing in a JSON object to a top level component.
-                    </li>
-                    <li>
-                        Developed or contributed to many other projects
-                        including:
-                        <ul>
-                            <li>
-                                Prototype for a somewhat unique software
-                                monitoring tool
-                                <div className="languages-technologies">
-                                    Java, JavaScript, PostgreSQL, React, Redux
-                                </div>
-                            </li>
-                            <li>
-                                An experimental CAPTCHA service
-                                <div className="languages-technologies">
-                                    Java, JavaScript, PostgreSQL, React
-                                </div>
-                            </li>
-                            <li>
-                                A tool for comparing geocoding providers
-                                <div className="languages-technologies">
-                                    JavaScript, React
-                                </div>
-                            </li>
-                            <li>
-                                Various internal libraries and tools
-                                <div className="languages-technologies">
-                                    Java, JavaScript, React
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </section>
-            <div
-                style={{
-                    textAlign: "center",
-                    fontSize: "1.2em",
-                    fontWeight: 500,
-                }}
-            >
-                More information on projects coming soon!
+        <div className="hero">
+            <div className="sunset">
+                <Tree />
+                <Intro />
+                <div className="hill-container">
+                    <Hills />
+                </div>
             </div>
         </div>
+    )
+}
+
+const Hills = () => {
+    return (
+        <svg
+            viewBox="0 0 1280 400"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <g clipPath="url(#clip0_223_7859)">
+                <path
+                    d="M-23.7846 159.398L-227 400H1396.5L1391.82 215.19C1388.16 70.8839 1197.39 22.1493 1124.97 147.022C1077.94 228.115 966.944 242.843 900.395 176.819L777.327 54.7219C702.293 -19.7203 577.593 -5.40269 521.384 84.1085L478.049 153.117C419.885 245.741 287.185 251.949 220.628 165.159C159.669 85.6705 40.8517 82.8696 -23.7846 159.398Z"
+                    fill="url(#paint0_linear_223_7859)"
+                />
+            </g>
+            <defs>
+                <linearGradient
+                    id="paint0_linear_223_7859"
+                    x1="585"
+                    y1="223.5"
+                    x2="585"
+                    y2="400"
+                    gradientUnits="userSpaceOnUse"
+                >
+                    <stop stopColor="#010204" />
+                    <stop offset="1" stopColor="#04070D" />
+                </linearGradient>
+                <clipPath id="clip0_223_7859">
+                    <rect
+                        width="1284"
+                        height="400"
+                        fill="white"
+                        transform="translate(-4)"
+                    />
+                </clipPath>
+            </defs>
+        </svg>
+    )
+}
+
+const Tree = () => {
+    return (
+        <svg
+            style={{
+                position: "absolute",
+                height: "92%",
+                top: "50%",
+                left: "32%",
+                transform: "translate(-50%, -50%)",
+            }}
+            viewBox="0 0 257 513"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M139.45 16.09C139.45 12.7814 142.141 10.09 145.45 10.09C148.766 10.09 151.45 12.7785 151.45 16.09C151.45 19.4015 148.766 22.09 145.45 22.09C142.141 22.09 139.45 19.3986 139.45 16.09ZM145.45 0.0899963C136.619 0.0899963 129.45 7.25856 129.45 16.09C129.45 23.6552 134.71 30.0001 141.77 31.6641V219.643L122.681 236.912L122.633 311.188L118.874 306.357L116.142 251.565L92.14 226.208V187.762C97.4797 185.82 101.18 180.523 101.18 174.55C101.18 166.999 95.2829 160.55 87.64 160.55C79.9897 160.55 74.09 166.996 74.09 174.55C74.09 180.527 77.7938 185.823 83.14 187.764V229.792L107.318 255.335L110.026 309.643L122.623 325.831L122.5 512.997L131.5 513.003L131.679 240.908L150.77 223.637V31.1845C156.995 28.9909 161.45 23.0563 161.45 16.09C161.45 7.26153 154.294 0.0899963 145.45 0.0899963ZM78.09 37.09C69.8128 37.09 63.09 43.8128 63.09 52.09C63.09 60.3671 69.8128 67.09 78.09 67.09C86.3671 67.09 93.09 60.3671 93.09 52.09C93.09 43.8128 86.3671 37.09 78.09 37.09ZM43.09 52.09C43.09 32.7672 58.7672 17.09 78.09 17.09C97.4128 17.09 113.09 32.7672 113.09 52.09C113.09 68.6106 101.63 82.4663 86.23 86.1376V139.527L65.32 166.797V236.099L97.9189 267.791L101.541 319.504L118.955 335.083L118.5 506.012L109.5 505.988L109.945 339.097L94.2102 325.021L94.1941 325.007L25.41 264.587V234.544C15.2909 232.463 7.67999 223.504 7.67999 212.77C7.67999 200.501 17.637 190.55 29.91 190.55C42.17 190.55 52.14 200.498 52.14 212.77C52.14 223.506 44.5211 232.462 34.41 234.544V260.513L91.9261 311.035L89.1811 271.849L56.32 239.901V169.177L36.0513 152.03C32.2562 155.271 27.3318 157.23 21.95 157.23C9.9546 157.23 0.230011 147.484 0.230011 135.5C0.230011 123.516 9.9546 113.77 21.95 113.77C33.9526 113.77 43.68 123.513 43.68 135.5C43.68 138.862 42.9147 142.048 41.5486 144.892L59.2755 159.889L77.23 136.473V87.0796C58.3041 86.6227 43.09 71.1254 43.09 52.09ZM249.86 178.989C253.69 177.115 256.27 173.067 256.27 168.52C256.27 162.263 251.384 156.95 245.08 156.95C238.784 156.95 233.9 162.265 233.9 168.52C233.9 173.282 236.731 177.499 240.86 179.241V200.742L201.68 241.643V208.954L220.77 189.864V90.1014C228.615 86.8259 234.14 79.0816 234.14 70.05C234.14 58.0474 224.397 48.32 212.41 48.32C200.41 48.32 190.68 58.0502 190.68 70.05C190.68 81.8287 200.069 91.4221 211.77 91.7608V186.136L198.962 198.944L185.32 186.06V151.823C196.655 149.436 205.18 139.374 205.18 127.32C205.18 113.495 193.961 102.27 180.14 102.27C166.312 102.27 155.09 113.492 155.09 127.32C155.09 139.855 164.307 150.231 176.32 152.07V189.94L192.68 205.39V251.038L137.234 308.918L136.77 505.989L145.77 506.011L146.226 312.542L249.86 204.358V178.989ZM171.09 127.32C171.09 122.328 175.148 118.27 180.14 118.27C185.119 118.27 189.18 122.325 189.18 127.32C189.18 132.309 185.125 136.36 180.14 136.36C175.142 136.36 171.09 132.306 171.09 127.32ZM29.91 204.55C25.363 204.55 21.68 208.239 21.68 212.77C21.68 217.314 25.366 221 29.91 221C34.447 221 38.14 217.311 38.14 212.77C38.14 208.242 34.45 204.55 29.91 204.55ZM203.68 70.05C203.68 65.2299 207.59 61.32 212.41 61.32C217.223 61.32 221.14 65.2326 221.14 70.05C221.14 74.8546 217.226 78.77 212.41 78.77C207.587 78.77 203.68 74.8574 203.68 70.05ZM21.95 126.77C17.1454 126.77 13.23 130.684 13.23 135.5C13.23 140.316 17.1454 144.23 21.95 144.23C26.7674 144.23 30.68 140.313 30.68 135.5C30.68 130.687 26.7674 126.77 21.95 126.77ZM87.64 168.55C84.7503 168.55 82.09 171.064 82.09 174.55C82.09 178.029 84.7528 180.55 87.64 180.55C90.5145 180.55 93.18 178.031 93.18 174.55C93.18 171.061 90.5171 168.55 87.64 168.55ZM239.9 168.52C239.9 165.315 242.356 162.95 245.08 162.95C247.816 162.95 250.27 165.317 250.27 168.52C250.27 171.723 247.816 174.09 245.08 174.09C242.356 174.09 239.9 171.725 239.9 168.52Z"
+                fill="#010204"
+                fillOpacity="1"
+            />
+        </svg>
     )
 }
 
