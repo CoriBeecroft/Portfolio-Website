@@ -3,8 +3,7 @@
 }
 
 body {
-    margin: 0px;
-    background-color: #06090d;
+    // background-color: lightblue; //#07090e; //#06090d;
     margin: 0px;
     text-align: center;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -12,6 +11,9 @@ body {
     padding-bottom: 0px;
     color: #e6e6e6;
     line-height: 1.28;
+    // backface-visibility: hidden;
+    // transform: translate3d(0, 0, 0);
+    // will-change: true;
 }
 
 h1 {
@@ -53,10 +55,10 @@ header {
     // rectangle below this element. It appears to be a Chrome bug. This
     // fix is likely working because it's forcing this element onto a new
     // layer so something is different about how it's being rendered.
-    backface-visibility: hidden;
+    // backface-visibility: hidden;
     position: relative;
     width: 100%;
-    height: 50vw;
+    height: 60vh;
     background-image: radial-gradient(
         circle at 50% 350%,
         #831a1a,
@@ -65,11 +67,51 @@ header {
 
     .hill-container {
         position: absolute;
-        top: 60%;
+        top: 0%;
         width: 100%;
+        height: 100%;
+        // background-color: lightblue;
 
         .hills {
             width: 100%;
         }
+    }
+}
+
+footer {
+    position: absolute;
+    width: 100%;
+    // height: 100%;
+    // backface-visibility: hidden;
+
+    .cave {
+        // position: absolute;
+        bottom: 0%;
+        left: 0%;
+    }
+
+    .little-dude {
+        position: absolute;
+        top: 61%;
+        left: 88%;
+        height: 18%;
+    }
+
+    .content {
+        position: absolute;
+        bottom: 0%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.contact-info {
+    svg {
+        fill: white;
+    }
+    a {
+        display: inline-block;
+        width: 28px;
+        margin: 6px;
     }
 }
