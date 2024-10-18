@@ -1,11 +1,5 @@
-// light grey: #2C3B43
-// dark grey: #212A2D
-// main blue: #176287
-// white: #E0EAED
-// yellow: #CB9B21
-
 $light-grey: #2c3b43;
-$dark-grey: #4e465c;
+$dark-grey: #212a2d;
 $main-blue: #176287;
 $light-blue: #428db3;
 $white: #e0eaed;
@@ -17,6 +11,7 @@ body {
     * {
         color: $white;
         font-family: sans-serif; /* TODO: update this */
+        font-size: 1.01em;
         box-sizing: border-box;
     }
 }
@@ -58,18 +53,92 @@ body {
         .filters {
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
             margin-bottom: 1.5rem;
+
             .filter {
-                padding: 10px 10px;
+                padding: 20px 10px;
                 border: 3px solid $light-blue;
                 border-radius: 8px;
                 width: 30%;
                 text-align: center;
-                margin: 8px;
+                margin: 10px 12px;
                 &.selected {
                     border-color: $main-blue;
                     background-color: $main-blue;
                 }
+            }
+        }
+    }
+
+    .project-notecard {
+        background-color: $dark-grey;
+        padding: 2rem 2.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2rem;
+
+        h2 {
+            font-size: 2em;
+            margin: 0px;
+            text-align: center;
+        }
+        .main-content {
+            display: flex;
+            margin: 1.25rem 0rem;
+            .summary-and-technologies {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin-left: 1.5rem;
+                text-align: center;
+            }
+
+            .technologies {
+                display: flex;
+
+                * {
+                    margin: 16px 8px;
+                    height: 32px;
+                }
+            }
+        }
+        .bottom-buttons {
+            display: flex;
+            margin-top: 8px;
+            button {
+                padding: 16px 16px;
+                border: none;
+                border-radius: 4px;
+                height: 48px;
+                width: 170px;
+                margin: 0px 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                :hover {
+                    cursor: pointer;
+                }
+            }
+            svg {
+                height: 20px;
+                margin-left: 8px;
+            }
+
+            .primary {
+                background-color: $main-blue;
+                a {
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+
+            .secondary {
+                background-color: $dark-grey;
+                border: 2px solid $light-blue;
             }
         }
     }
@@ -83,6 +152,7 @@ body {
         align-items: center;
         // position: absolute;
         // bottom: 0%;
+        margin-top: 4rem;
 
         .content {
             display: flex;
