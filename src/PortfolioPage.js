@@ -1,7 +1,5 @@
-import React, { useState, useEffect, useRef } from "react"
-import { Project } from "./components/Project"
-import { projects } from "./projectContent"
-import { Tile } from "./components/Tile"
+import React from "react"
+import hnMintImage from "./images/hn-mint.png"
 
 import "./PortfolioPage.scss"
 
@@ -26,7 +24,7 @@ const ProjectNotecard = () => {
         <div className="project-notecard">
             <h2>Hacker News Mint</h2>
             <div className="main-content">
-                <img src="./images/hn-mint.png" />
+                <img src={hnMintImage} />
                 <div className="summary-and-technologies">
                     <div className="technologies">
                         <Icon type="react" />
