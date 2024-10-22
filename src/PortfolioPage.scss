@@ -44,6 +44,10 @@ body {
         display: flex;
         justify-content: center;
         padding: 3rem;
+
+        .header-graphic {
+            width: 470px;
+        }
     }
 
     main {
