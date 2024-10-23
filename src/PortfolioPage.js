@@ -6,6 +6,7 @@ import Icon from "./components/Icon"
 import Footer from "./components/Footer"
 
 import "./PortfolioPage.scss"
+import "./Common.scss"
 
 export const PortfolioPage = () => {
     return (

@@ -1,0 +1,30 @@
+@use "../variables" as vars;
+
+header {
+    height: 65px;
+    background-color: vars.$main-blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .link-container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1000px;
+        .secondary-links * {
+            margin: 0px 12px;
+        }
+    }
+}
+
+.header-graphic-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
+
+    .header-graphic {
+        width: 470px;
+    }
+}

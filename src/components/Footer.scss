@@ -1,0 +1,28 @@
+@use "../variables" as vars;
+
+footer {
+    height: 100px;
+    width: 100%;
+    background-color: vars.$main-blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // position: absolute;
+    // bottom: 0%;
+    margin-top: 4rem;
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        .icon {
+            margin-bottom: 12px;
+        }
+    }
+}
+
+.contact-info .icon {
+    height: 32px;
+    fill: vars.$white;
+    margin: 0px 8px;
+}

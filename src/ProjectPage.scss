@@ -1,6 +1,59 @@
-$light-grey: #2c3b43;
-$dark-grey: #212a2d;
-$main-blue: #176287;
-$light-blue: #428db3;
-$white: #e0eaed;
-$yellow: #cb9b21;
+@use "./variables" as vars;
+
+main {
+    .main-image {
+        width: 100%;
+        margin-bottom: 2.5rem;
+    }
+
+    .button-container {
+        width: 100%;
+
+        display: flex;
+        button {
+            width: 50%;
+            padding: 32px;
+        }
+    }
+
+    .technologies {
+        display: flex;
+        justify-content: center;
+        background-color: vars.$dark-grey;
+        margin-top: 1.5rem;
+        padding: 8px;
+
+        * {
+            margin: 16px;
+            height: 40px;
+        }
+    }
+
+    .details {
+        background-color: vars.$dark-grey;
+        padding: 3rem 3.5rem 3.5rem 3.5rem;
+        margin-top: 2rem;
+
+        h2 {
+            margin: 0px;
+            margin-bottom: 1.25rem;
+            font-size: 1.75rem;
+            font-weight: normal;
+            text-decoration: underline;
+            text-decoration-color: vars.$main-blue;
+            text-underline-offset: 8px;
+        }
+
+        .content {
+            margin-bottom: 3rem;
+
+            ul {
+                margin: 0px;
+            }
+        }
+
+        > :last-child .content {
+            margin-bottom: 0px;
+        }
+    }
+}

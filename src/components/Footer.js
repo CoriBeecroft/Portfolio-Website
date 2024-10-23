@@ -1,6 +1,8 @@
 import React from "react"
 import Icon from "./Icon"
 
+import "./Footer.scss"
+
 const Footer = () => (
     <footer>
         <div className="content">

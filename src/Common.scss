@@ -1,0 +1,52 @@
+@use "./variables" as vars;
+
+body {
+    margin: 0px;
+
+    * {
+        color: vars.$white;
+        font-family: sans-serif; /* TODO: update this */
+        font-size: 1.01em;
+        box-sizing: border-box;
+    }
+}
+
+#site-container {
+    background-color: vars.$light-grey;
+    position: relative;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 3.2em;
+    text-align: center;
+}
+
+main {
+    max-width: 880px;
+    margin: auto;
+}
+
+button {
+    padding: 16px 16px;
+    border: none;
+    border-radius: 4px;
+    height: 48px;
+    margin: 0px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    :hover {
+        cursor: pointer;
+    }
+
+    &.primary {
+        background-color: vars.$main-blue;
+    }
+
+    &.secondary {
+        background-color: vars.$dark-grey;
+        border: 2px solid vars.$light-blue;
+    }
+}
