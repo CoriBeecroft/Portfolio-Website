@@ -5,10 +5,10 @@ import HeaderGraphic from "./components/HeaderGraphic"
 import Icon from "./components/Icon"
 import Footer from "./components/Footer"
 
-import "./PortfolioPage.scss"
+import "./HomePage.scss"
 import "./Common.scss"
 
-export const PortfolioPage = () => {
+const HomePage = () => {
     return (
         <>
             <Header />
@@ -84,3 +84,5 @@ const ProjectNotecard = () => {
         </div>
     )
 }
+
+export default HomePage

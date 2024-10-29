@@ -26,7 +26,7 @@ import React from "react"
     gitHub: ""
 } */
 
-export const projects = [
+const projects = [
     {
         id: "hn-fish",
         title: "Hacker News Fish",
@@ -334,3 +334,5 @@ export const projects = [
         gitHub: "https://github.com/CoriBeecroft/DoomPet",
     },
 ]
+
+export default projects
