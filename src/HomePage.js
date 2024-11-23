@@ -1,9 +1,9 @@
 import React from "react"
-import hnMintImage from "./images/hn-mint.png"
 import Header from "./components/Header"
 import HeaderGraphic from "./components/HeaderGraphic"
 import Icon from "./components/Icon"
 import Footer from "./components/Footer"
+import projects from "./projectContent"
 
 import "./HomePage.scss"
 import "./Common.scss"
@@ -15,9 +15,9 @@ const HomePage = () => {
             <HeaderGraphic />
             <main>
                 <Filters />
-                <ProjectNotecard />
-                <ProjectNotecard />
-                <ProjectNotecard />
+                {projects.map(project => (
+                    <ProjectNotecard key={project.id} {...project} />
+                ))}
             </main>
             <Footer />
         </>
@@ -50,25 +50,49 @@ const Filters = () => {
     )
 }
 
-const ProjectNotecard = () => {
+const ProjectNotecard = ({
+    title,
+    description,
+    writtenWith,
+    image,
+    tagline,
+    preview,
+}) => {
+    // id: "",
+    // title: "",
+    // tagline: <a href="" target="_blank">
+    //     (See Project)
+    // </a>,
+    // preview: <a target="_blank" href="">
+    //     <img { ...{
+    //         className: "img-responsive",
+    //         title: "",
+    //         alt: "",
+    //         src: ""
+    //     }} />
+    // </a>,
+    // description: "",
+    // inspiration: ``,
+    // usageInstructions: []
+    // myContribution: <></>,
+    // whatWasChallenging: ``,
+    // areasForImprovement: [],
+    // todo: [],
+    // writtenWith: "",
+    // gitHub: ""
+
     return (
         <div className="project-notecard">
-            <h2>Hacker News Mint</h2>
+            <h2>{title}</h2>
             <div className="main-content">
-                <img src={hnMintImage} />
+                <img src={image} />
                 <div className="summary-and-technologies">
                     <div className="technologies">
-                        <Icon type="react" />
-                        <Icon type="javascript" />
-                        <Icon type="css" />
+                        {writtenWith.map(technology => (
+                            <Icon key={technology} type={technology} />
+                        ))}
                     </div>
-                    <div>
-                        The first of three Hacker News front-ends I made. I
-                        wrote this initially in 2017 as a way to learn React and
-                        try to make a more professional UI. I enjoyed using it
-                        to read Hacker News so I've made a few improvements
-                        recently.
-                    </div>
+                    <div>{description}</div>
                 </div>
             </div>
             <div className="bottom-buttons">

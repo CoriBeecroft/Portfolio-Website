@@ -1,4 +1,8 @@
 import React from "react"
+import hnMintImage from "./images/hn-mint.png"
+import hnFishImage from "./images/hn-fish.png"
+import firefliesImage from "./images/fireflies.png"
+import forty96Image from "./images/4096.png"
 
 // template for project
 /* {
@@ -47,6 +51,7 @@ const projects = [
                 />
             </a>
         ),
+        image: hnFishImage,
         description: (
             <>
                 {"A "}
@@ -95,8 +100,14 @@ const projects = [
                 />
             </a>
         ),
+        image: hnMintImage,
         description: (
             <>
+                {/* The first of three Hacker News front-ends I made. I
+                        wrote this initially in 2017 as a way to learn React and
+                        try to make a more professional UI. I enjoyed using it
+                        to read Hacker News so I've made a few improvements
+                        recently. */}
                 {"A front-end for "}
                 <a href="https://news.ycombinator.com/">Hacker News</a>
                 {`. I wrote this initially as way to learn React but I like using 
@@ -143,6 +154,7 @@ const projects = [
                 />
             </a>
         ),
+        image: firefliesImage,
         description:
             "A graphical demo built on React. I made this for fun on a weekend.",
         inspiration: ``,
@@ -160,7 +172,7 @@ const projects = [
             "Fix issues with window resizing",
             "Make dragging add a trail of fireflies",
         ],
-        writtenWith: ["React", "JavaScript"],
+        writtenWith: ["React", "JavaScript", "CSS"],
         gitHub: "https://github.com/CoriBeecroft/fireflies",
     },
     {
@@ -183,6 +195,7 @@ const projects = [
                 />
             </a>
         ),
+        image: forty96Image,
         description: (
             <>
                 {"A scripted version of the game "}
@@ -298,7 +311,8 @@ const projects = [
     </>,
     writtenWith: "Java",
     gitHub: "This project is in a private repository"
-},  */ {
+},  */
+    /* {
         id: "doom-pet",
         title: "Doom Pet",
         preview: (
@@ -332,7 +346,7 @@ const projects = [
         entities (e.g. the pet, his food, etc).`,
         writtenWith: ["Java", "a simple game framework"],
         gitHub: "https://github.com/CoriBeecroft/DoomPet",
-    },
+    }, */
 ]
 
 export default projects
