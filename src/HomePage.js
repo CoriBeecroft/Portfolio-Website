@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import Header from "./components/Header"
 import HeaderGraphic from "./components/HeaderGraphic"
 import Icon from "./components/Icon"
@@ -9,22 +9,31 @@ import "./HomePage.scss"
 import "./Common.scss"
 
 const HomePage = () => {
+    const [selectedFilter, setSelectedFilter] = useState("All")
+
     return (
         <>
             <Header />
             <HeaderGraphic />
             <main>
-                <Filters />
-                {Object.values(projects).map(project => (
-                    <ProjectNotecard key={project.id} {...project} />
-                ))}
+                <Filters {...{ selectedFilter, setSelectedFilter }} />
+                {Object.values(projects)
+                    .filter(project => {
+                        return (
+                            selectedFilter == "All" ||
+                            project.tags.includes(selectedFilter.toLowerCase())
+                        )
+                    })
+                    .map(project => (
+                        <ProjectNotecard key={project.id} {...project} />
+                    ))}
             </main>
             <Footer />
         </>
     )
 }
 
-const Filters = () => {
+const Filters = ({ selectedFilter, setSelectedFilter }) => {
     return (
         <div className="filters">
             {[
@@ -37,10 +46,13 @@ const Filters = () => {
             ].map(filter => {
                 return (
                     <div
-                        key={filter}
-                        className={
-                            "filter" + (filter === "All" ? " selected" : "")
-                        }
+                        {...{
+                            key: filter,
+                            className:
+                                "filter" +
+                                (filter === selectedFilter ? " selected" : ""),
+                            onClick: () => setSelectedFilter(filter),
+                        }}
                     >
                         {filter}
                     </div>
@@ -89,14 +101,12 @@ const ProjectNotecard = ({ title, description, technologies, image, id }) => {
                 </div>
             </div>
             <div className="bottom-buttons">
-                <button className="primary">
-                    <a>
-                        View Live <Icon type="play" />
-                    </a>
-                </button>
-                <button className="secondary">
-                    <a href={`/project1.html?project=${id}`}>More Info</a>
-                </button>
+                <a className="button primary">
+                    View Live <Icon type="play" />
+                </a>
+                <a className="secondary" href={`/project1.html?project=${id}`}>
+                    More Info
+                </a>
             </div>
         </div>
     )

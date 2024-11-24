@@ -29,7 +29,8 @@ import forty96BigImage from "./images/4096-big.png"
     whatWasChallenging: ``,
     areasForImprovement: [],
     technologies: "",
-    gitHub: ""
+    gitHub: "",
+    tags: ["professional", "personal", "front-end", "back-end", "full-stack"]
 } */
 
 const projects = {
@@ -83,6 +84,7 @@ const projects = {
         ],
         technologies: ["JavaScript", "React", "CSS"],
         gitHub: "https://github.com/coribeecroft/hacker-news-frontend",
+        tags: ["personal", "front-end"],
     },
     "hn-mint": {
         id: "hn-mint",
@@ -145,6 +147,7 @@ const projects = {
         ],
         technologies: ["JavaScript", "React", "CSS"],
         gitHub: "https://github.com/coribeecroft/hacker-news-frontend",
+        tags: ["personal", "front-end"],
     },
     fireflies: {
         id: "fireflies",
@@ -188,6 +191,7 @@ const projects = {
         ],
         technologies: ["React", "JavaScript", "CSS"],
         gitHub: "https://github.com/CoriBeecroft/fireflies",
+        tags: ["personal", "front-end"],
     },
     forty96: {
         id: "forty96",
@@ -237,6 +241,7 @@ const projects = {
         ],
         technologies: ["JavaScript", "CSS", "JQuery"],
         gitHub: "https://github.com/coribeecroft/4096",
+        tags: ["personal", "front-end"],
     },
 }
 
