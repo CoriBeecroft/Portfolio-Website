@@ -15,7 +15,7 @@ const HomePage = () => {
             <HeaderGraphic />
             <main>
                 <Filters />
-                {projects.map(project => (
+                {Object.values(projects).map(project => (
                     <ProjectNotecard key={project.id} {...project} />
                 ))}
             </main>
@@ -50,14 +50,7 @@ const Filters = () => {
     )
 }
 
-const ProjectNotecard = ({
-    title,
-    description,
-    writtenWith,
-    image,
-    tagline,
-    preview,
-}) => {
+const ProjectNotecard = ({ title, description, technologies, image, id }) => {
     // id: "",
     // title: "",
     // tagline: <a href="" target="_blank">
@@ -88,7 +81,7 @@ const ProjectNotecard = ({
                 <img src={image} />
                 <div className="summary-and-technologies">
                     <div className="technologies">
-                        {writtenWith.map(technology => (
+                        {technologies.map(technology => (
                             <Icon key={technology} type={technology} />
                         ))}
                     </div>
@@ -102,7 +95,7 @@ const ProjectNotecard = ({
                     </a>
                 </button>
                 <button className="secondary">
-                    <a>More Info</a>
+                    <a href={`/project1.html?project=${id}`}>More Info</a>
                 </button>
             </div>
         </div>

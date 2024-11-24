@@ -11,6 +11,12 @@ body {
     }
 }
 
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
 #site-container {
     background-color: vars.$light-grey;
     position: relative;
