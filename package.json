@@ -4,7 +4,8 @@
     "description": "",
     "private": true,
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "dev": "webpack serve --mode development --devtool eval-source-map",
+        "build": "webpack --mode production"
     },
     "repository": {
         "type": "git",
@@ -19,7 +20,8 @@
     "homepage": "https://github.com/CoriBeecroft/Portfolio-Website#readme",
     "dependencies": {
         "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "react-dom": "^18.2.0",
+        "react-router-dom": "^7.9.5"
     },
     "devDependencies": {
         "@babel/core": "^7.22.9",
@@ -33,6 +35,7 @@
         "sass": "^1.63.6",
         "sass-loader": "^13.3.2",
         "webpack": "^5.88.1",
-        "webpack-cli": "^5.1.4"
+        "webpack-cli": "^5.1.4",
+        "webpack-dev-server": "^5.2.2"
     }
 }

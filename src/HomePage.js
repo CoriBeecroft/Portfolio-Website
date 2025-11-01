@@ -4,6 +4,7 @@ import HeaderGraphic from "./components/HeaderGraphic"
 import Icon from "./components/Icon"
 import Footer from "./components/Footer"
 import projects from "./projectContent"
+import { Link } from "react-router-dom"
 
 import "./HomePage.scss"
 import "./Common.scss"
@@ -104,9 +105,10 @@ const ProjectNotecard = ({ title, description, technologies, image, id }) => {
                 <a className="button primary">
                     View Live <Icon type="play" />
                 </a>
-                <a className="secondary" href={`/project1.html?project=${id}`}>
+
+                <Link className="secondary" to={`/projects/${id}`}>
                     More Info
-                </a>
+                </Link>
             </div>
         </div>
     )

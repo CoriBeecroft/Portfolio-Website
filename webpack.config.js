@@ -7,11 +7,11 @@ const TerserPlugin = require("terser-webpack-plugin")
 module.exports = {
     entry: {
         main: "./src/index.js",
-        project1: "./src/project1.js",
     },
     output: {
         filename: "[name].[contenthash].js",
         path: path.resolve(__dirname, "dist"),
+        publicPath: "/",
         clean: true,
     },
     mode: "development",
@@ -25,13 +25,16 @@ module.exports = {
             chunks: ["main"],
             favicon: "./src/images/favicon.png",
         }),
-        new HtmlWebpackPlugin({
-            template: "./src/project1.html",
-            filename: "project1.html",
-            chunks: ["project1"],
-            favicon: "./src/images/favicon.png",
-        }),
     ],
+
+    devServer: {
+        historyApiFallback: {
+            index: "/index.html",
+            rewrites: [{ from: /^\/projects\/.*$/, to: "/index.html" }],
+        },
+        hot: true,
+        port: 9080,
+    },
     module: {
         rules: [
             {

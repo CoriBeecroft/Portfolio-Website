@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react"
+import React, { useMemo } from "react"
+import { useParams, Link } from "react-router-dom"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 import Icon from "./components/Icon"
@@ -7,62 +8,53 @@ import projectContent from "./projectContent"
 import "./ProjectPage.scss"
 import "./Common.scss"
 
-function getQueryParam(paramName) {
-    const urlParams = new URLSearchParams(window.location.search)
-    const paramObject = {}
-
-    for (const [key, value] of urlParams) {
-        paramObject[key] = value
-    }
-
-    return paramObject[paramName] ?? ""
-}
-
-// template for project
-/* {
-    id: "",
-    title: "",
-    live-url: ""
-    preview: <a target="_blank" href="">
-        <img { ...{
-            className: "img-responsive",
-            title: "",
-            alt: "",
-            src: ""
-        }} />
-    </a>,
-    description: "",
-    objectives: [],
-    todo: [],
-    usageInstructions: []
-    myContribution: <></>,
-    whatWasChallenging: ``,
-    areasForImprovement: [],
-    technologies: "",
-    gitHub: ""
-} */
-
-export const ProjectPage = () => {
-    const [project, setProject] = useState(null)
-
-    useEffect(() => {
-        setProject(projectContent[getQueryParam("project")])
-    }, [])
+export default function ProjectPage() {
+    const { id } = useParams()
+    const project = useMemo(() => projectContent[id], [id])
 
     return (
         <>
             <Header />
-            {project && (
+            {!project ? (
+                <main>
+                    <h1>Project not found</h1>
+                    <p>
+                        The project “{id}” doesn’t exist.{" "}
+                        <Link to="/">Go back home</Link>
+                    </p>
+                </main>
+            ) : (
                 <main>
                     <h1>{project.title}</h1>
-                    <img className="main-image" src={project.bigImage} />
-
+                    <img
+                        className="main-image"
+                        src={project.bigImage}
+                        alt={project.title}
+                    />
                     <div className="button-container">
-                        <button className="primary">View Live</button>
-                        <button className="secondary">View On GitHub</button>
+                        {project.liveUrl && (
+                            <a
+                                className="primary"
+                                href={project.liveUrl}
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                View Live
+                            </a>
+                        )}
+                        {project.gitHub && (
+                            <a
+                                className="secondary"
+                                href={project.gitHub}
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                View on GitHub
+                            </a>
+                        )}
                     </div>
                     <div className="technologies">
-                        {project.technologies.map(t => (
+                        {project.technologies?.map(t => (
                             <Icon key={t} type={t} />
                         ))}
                     </div>
@@ -71,17 +63,19 @@ export const ProjectPage = () => {
                             <h2>Description</h2>
                             <div className="content">{project.description}</div>
                         </div>
-                        <div className="objectives">
-                            <h2>Objectives</h2>
-                            <div className="content">
-                                <ul>
-                                    {project.objectives.map(o => (
-                                        <li>{o}</li>
-                                    ))}
-                                </ul>
+                        {project.objectives?.length > 0 && (
+                            <div className="objectives">
+                                <h2>Objectives</h2>
+                                <div className="content">
+                                    <ul>
+                                        {project.objectives.map((o, i) => (
+                                            <li key={i}>{o}</li>
+                                        ))}
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                        {project.todo && (
+                        )}
+                        {project.todo?.length > 0 && (
                             <div className="to-do">
                                 <h2>To Do</h2>
                                 <div className="content">
@@ -93,6 +87,7 @@ export const ProjectPage = () => {
                                 </div>
                             </div>
                         )}
+
                         <div className="challenges-and-lessons">
                             <h2>Challenges and Lessons</h2>
                             <div className="content">
