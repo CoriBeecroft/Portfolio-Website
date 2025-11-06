@@ -1,13 +1,33 @@
 @use "./variables" as vars;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Mono:wght@400;600&display=swap");
+
+:root {
+    --font-sans: "Roboto", system-ui, -apple-system, "Segoe UI", Arial,
+        sans-serif;
+    --font-mono: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Consolas,
+        monospace;
+}
 
 body {
     margin: 0px;
 
     * {
         color: vars.$white;
-        font-family: sans-serif; /* TODO: update this */
+        font-family: var(--font-sans);
         font-size: 1.01em;
         box-sizing: border-box;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    button,
+    .button,
+    a {
+        font-family: var(--font-mono);
     }
 }
 

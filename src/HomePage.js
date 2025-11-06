@@ -50,7 +50,7 @@ const Filters = ({ selectedFilter, setSelectedFilter }) => {
                         {...{
                             key: filter,
                             className:
-                                "filter" +
+                                "button filter" +
                                 (filter === selectedFilter ? " selected" : ""),
                             onClick: () => setSelectedFilter(filter),
                         }}

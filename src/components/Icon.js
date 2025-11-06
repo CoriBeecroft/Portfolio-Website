@@ -7,11 +7,14 @@ export function Icon({ type }) {
         return (
             <svg
                 className="icon"
+                viewBox="0 0 32 32"
+                fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 512 512"
             >
-                {/* Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. */}
-                <path d="M64 112c-8.8 0-16 7.2-16 16l0 22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1l0-22.1c0-8.8-7.2-16-16-16L64 112zM48 212.2L48 384c0 8.8 7.2 16 16 16l384 0c8.8 0 16-7.2 16-16l0-171.8L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64l384 0c35.3 0 64 28.7 64 64l0 256c0 35.3-28.7 64-64 64L64 448c-35.3 0-64-28.7-64-64L0 128z" />
+                <path
+                    d="M3 4C1.34375 4 0 5.34375 0 7C0 7.94375 0.44375 8.83125 1.2 9.4L14.8 19.6C15.5125 20.1313 16.4875 20.1313 17.2 19.6L30.8 9.4C31.5562 8.83125 32 7.94375 32 7C32 5.34375 30.6562 4 29 4H3ZM0 11V24C0 26.2063 1.79375 28 4 28H28C30.2063 28 32 26.2063 32 24V11L18.4 21.2C16.975 22.2688 15.025 22.2688 13.6 21.2L0 11Z"
+                    fill="white"
+                />
             </svg>
         )
     } else if (normalizedType === "git-hub") {

@@ -28,10 +28,7 @@ module.exports = {
     ],
 
     devServer: {
-        historyApiFallback: {
-            index: "/index.html",
-            rewrites: [{ from: /^\/projects\/.*$/, to: "/index.html" }],
-        },
+        historyApiFallback: true,
         hot: true,
         port: 9080,
     },
