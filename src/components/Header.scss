@@ -1,7 +1,7 @@
 @use "../variables" as vars;
 
 header {
-    height: 65px;
+    padding: 1rem 2rem;
     background-color: vars.$main-blue;
     display: flex;
     justify-content: center;
@@ -13,8 +13,13 @@ header {
         width: 100%;
         max-width: 880px;
 
-        .secondary-links * {
-            margin: 0px 12px;
+        .secondary-links {
+            * {
+                margin: 0px 12px;
+            }
+            :last-child {
+                margin: 0;
+            }
         }
     }
 }
