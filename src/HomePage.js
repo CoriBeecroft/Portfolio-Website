@@ -1,10 +1,9 @@
 import React, { useState } from "react"
 import Header from "./components/Header"
 import HeaderGraphic from "./components/HeaderGraphic"
-import Icon from "./components/Icon"
 import Footer from "./components/Footer"
 import projects from "./projectContent"
-import { Link } from "react-router-dom"
+import ProjectNotecard from "./ProjectNotecard"
 
 import "./HomePage.scss"
 import "./Common.scss"
@@ -18,16 +17,20 @@ const HomePage = () => {
             <HeaderGraphic />
             <main>
                 <Filters {...{ selectedFilter, setSelectedFilter }} />
-                {Object.values(projects)
-                    .filter(project => {
-                        return (
-                            selectedFilter == "All" ||
-                            project.tags.includes(selectedFilter.toLowerCase())
-                        )
-                    })
-                    .map(project => (
-                        <ProjectNotecard key={project.id} {...project} />
-                    ))}
+                <div className="projects">
+                    {Object.values(projects)
+                        .filter(project => {
+                            return (
+                                selectedFilter == "All" ||
+                                project.tags.includes(
+                                    selectedFilter.toLowerCase()
+                                )
+                            )
+                        })
+                        .map(project => (
+                            <ProjectNotecard key={project.id} {...project} />
+                        ))}
+                </div>
             </main>
             <Footer />
         </>
@@ -59,57 +62,6 @@ const Filters = ({ selectedFilter, setSelectedFilter }) => {
                     </div>
                 )
             })}
-        </div>
-    )
-}
-
-const ProjectNotecard = ({ title, description, technologies, image, id }) => {
-    // id: "",
-    // title: "",
-    // tagline: <a href="" target="_blank">
-    //     (See Project)
-    // </a>,
-    // preview: <a target="_blank" href="">
-    //     <img { ...{
-    //         className: "img-responsive",
-    //         title: "",
-    //         alt: "",
-    //         src: ""
-    //     }} />
-    // </a>,
-    // description: "",
-    // inspiration: ``,
-    // usageInstructions: []
-    // myContribution: <></>,
-    // whatWasChallenging: ``,
-    // areasForImprovement: [],
-    // todo: [],
-    // writtenWith: "",
-    // gitHub: ""
-
-    return (
-        <div className="project-notecard">
-            <h2>{title}</h2>
-            <div className="main-content">
-                <img src={image} />
-                <div className="summary-and-technologies">
-                    <div className="technologies">
-                        {technologies.map(technology => (
-                            <Icon key={technology} type={technology} />
-                        ))}
-                    </div>
-                    <div>{description}</div>
-                </div>
-            </div>
-            <div className="bottom-buttons">
-                <a className="button primary">
-                    View Live <Icon type="play" />
-                </a>
-
-                <Link className="secondary" to={`/projects/${id}`}>
-                    More Info
-                </Link>
-            </div>
         </div>
     )
 }

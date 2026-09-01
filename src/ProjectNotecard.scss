@@ -1,0 +1,103 @@
+$light-grey: #2c3b43;
+$dark-grey: #212a2d;
+$main-blue: #176287;
+$light-blue: #428db3;
+$white: #e0eaed;
+$yellow: #cb9b21;
+
+.project-notecard {
+    background-color: $dark-grey;
+    padding: 2rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    max-width: 90%;
+
+    h2 {
+        font-size: 1.5em;
+        margin: 0px;
+        text-align: center;
+    }
+
+    .main-content {
+        display: flex;
+        margin: 1.25rem 0rem;
+
+        img {
+            width: 48%;
+            min-width: 180px;
+        }
+
+        .summary-and-technologies {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 48%;
+            margin-left: 1.5rem;
+
+            .technologies {
+                display: flex;
+                align-items: center;
+                margin-top: 0px;
+
+                * {
+                    margin: 16px 8px;
+                    height: 32px;
+                }
+            }
+        }
+    }
+
+    .bottom-buttons {
+        display: flex;
+        margin-top: 8px;
+
+        a {
+            padding: 12px 12px;
+            border: none;
+            border-radius: 4px;
+            height: 48px;
+            width: 165px;
+            margin: 0px 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        svg {
+            height: 20px;
+            margin-left: 8px;
+        }
+
+        .primary {
+            background-color: $main-blue;
+        }
+
+        .secondary {
+            background-color: $dark-grey;
+            border: 2px solid $light-blue;
+        }
+    }
+
+    @media (max-width: 650px) {
+        .main-content {
+            flex-wrap: wrap;
+            img {
+                width: 80%;
+                margin: auto;
+            }
+
+            .summary-and-technologies {
+                width: 100%;
+                margin: auto;
+            }
+        }
+    }
+}

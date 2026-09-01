@@ -5,17 +5,6 @@ $light-blue: #428db3;
 $white: #e0eaed;
 $yellow: #cb9b21;
 
-body {
-    margin: 0px;
-
-    * {
-        color: $white;
-        font-family: sans-serif; /* TODO: update this */
-        font-size: 1.01em;
-        box-sizing: border-box;
-    }
-}
-
 #site-container {
     background-color: $light-grey;
     position: relative;
@@ -36,11 +25,20 @@ body {
         max-width: 880px;
         margin: auto;
 
+        .projects {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         .filters {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            margin: auto;
             margin-bottom: 1.5rem;
+            max-width: 90%;
+            position: relative;
 
             .filter {
                 padding: 15px 10px;
@@ -48,10 +46,12 @@ body {
                 border-radius: 8px;
                 width: 30%;
                 text-align: center;
-                margin: 10px 12px;
+                // margin: 10px 12px;
+                margin: 0.5rem;
                 transition:
                     background-color 250ms,
                     border-color 250ms;
+
                 &.selected {
                     border-color: $main-blue;
                     background-color: $main-blue;
@@ -62,75 +62,11 @@ body {
                     background-color: $main-blue;
                 }
             }
-        }
-    }
-
-    .project-notecard {
-        background-color: $dark-grey;
-        padding: 2rem 2.5rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 2rem;
-
-        h2 {
-            font-size: 2em;
-            margin: 0px;
-            text-align: center;
-        }
-        .main-content {
-            display: flex;
-            margin: 1.25rem 0rem;
-
-            .summary-and-technologies {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                margin-left: 1.5rem;
-                text-align: center;
-            }
-
-            .technologies {
-                display: flex;
-                align-items: center;
-
-                * {
-                    margin: 16px 8px;
-                    height: 32px;
+            @media (max-width: 700px) {
+                .filter {
+                    width: 45%;
+                    // margin: 8px 10px;
                 }
-            }
-        }
-        .bottom-buttons {
-            display: flex;
-            margin-top: 8px;
-            a {
-                padding: 16px 16px;
-                border: none;
-                border-radius: 4px;
-                height: 48px;
-                width: 170px;
-                margin: 0px 8px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                &:hover {
-                    cursor: pointer;
-                }
-            }
-            svg {
-                height: 20px;
-                margin-left: 8px;
-            }
-
-            .primary {
-                background-color: $main-blue;
-            }
-
-            .secondary {
-                background-color: $dark-grey;
-                border: 2px solid $light-blue;
             }
         }
     }

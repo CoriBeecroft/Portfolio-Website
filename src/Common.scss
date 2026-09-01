@@ -2,19 +2,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Mono:wght@400;600&display=swap");
 
 :root {
-    --font-sans: "Roboto", system-ui, -apple-system, "Segoe UI", Arial,
-        sans-serif;
-    --font-mono: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Consolas,
-        monospace;
+    --font-sans:
+        "Roboto", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    --font-mono:
+        "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
 body {
     margin: 0px;
 
+    font-size: 1.01em;
+
     * {
         color: vars.$white;
         font-family: var(--font-sans);
-        font-size: 1.01em;
         box-sizing: border-box;
     }
 
@@ -25,8 +26,7 @@ body {
     h5,
     h6,
     button,
-    .button,
-    a {
+    .button {
         font-family: var(--font-mono);
     }
 }
