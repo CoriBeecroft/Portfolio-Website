@@ -17,8 +17,8 @@ const HomePage = () => {
             <Header />
             <HeaderGraphic />
             <main>
-                <Filters {...{ selectedFilter, setSelectedFilter }} />
-                {Object.values(projects)
+                {/* <Filters {...{ selectedFilter, setSelectedFilter }} /> */}
+                {/* {Object.values(projects)
                     .filter(project => {
                         return (
                             selectedFilter == "All" ||
@@ -27,7 +27,7 @@ const HomePage = () => {
                     })
                     .map(project => (
                         <ProjectNotecard key={project.id} {...project} />
-                    ))}
+                    ))} */}
             </main>
             <Footer />
         </>

@@ -5,16 +5,15 @@ $light-blue: #428db3;
 $white: #e0eaed;
 $yellow: #cb9b21;
 
-body {
-    margin: 0px;
+// body {
+//     margin: 0px;
 
-    * {
-        color: $white;
-        font-family: sans-serif; /* TODO: update this */
-        font-size: 1.01em;
-        box-sizing: border-box;
-    }
-}
+//     font-size: 1.01em;
+
+//     * {
+//         box-sizing: border-box;
+//     }
+// }
 
 #site-container {
     background-color: $light-grey;
@@ -22,13 +21,18 @@ body {
     min-height: 100vh;
 
     .header-graphic-container {
-        width: 100%;
+        margin: auto;
         display: flex;
         justify-content: center;
-        padding: 3rem;
+        align-items: center;
+        padding: 1rem;
+        // border: 1px solid red;
 
         .header-graphic {
-            width: 375px;
+            // width: 375px;
+            width: 80%;
+            min-width: 400px;
+            max-width: 880px;
         }
     }
 
@@ -133,30 +137,5 @@ body {
                 border: 2px solid $light-blue;
             }
         }
-    }
-
-    footer {
-        height: 100px;
-        width: 100%;
-        background-color: $main-blue;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 4rem;
-
-        .content {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            .icon {
-                margin-bottom: 12px;
-            }
-        }
-    }
-
-    .contact-info .icon {
-        height: 32px;
-        fill: $white;
-        margin: 0px 8px;
     }
 }
