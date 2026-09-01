@@ -76,10 +76,12 @@ const hnFishContent = {
         "Usability tweaks (ex. there are are lot of pointer events on the fish which can be a bit confusing, especially since the pointer target is usually moving)",
         "Bug fixes",
     ],
-    technologies: ["JavaScript", "React", "CSS"],
+    technologies: ["React", "JavaScript", "CSS"],
+    liveUrl: "http://localhost:8080/?mode=fish", // TODO: need to make this work on Firebase
     gitHub: "https://github.com/coribeecroft/hacker-news-frontend",
     tags: ["personal", "front-end"],
 }
+
 const hnMintContent = {
     id: "hn-mint",
     title: "Hacker News Front End",
@@ -139,7 +141,7 @@ const hnMintContent = {
             )
         </>,
     ],
-    technologies: ["JavaScript", "React", "CSS"],
+    technologies: ["React", "JavaScript", "CSS"],
     gitHub: "https://github.com/coribeecroft/hacker-news-frontend",
     tags: ["personal", "front-end"],
 }

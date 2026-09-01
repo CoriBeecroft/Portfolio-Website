@@ -34,17 +34,17 @@ export default function ProjectPage() {
                     <div className="button-container">
                         {project.liveUrl && (
                             <a
-                                className="primary"
+                                className="button primary"
                                 href={project.liveUrl}
                                 target="_blank"
                                 rel="noreferrer"
                             >
-                                View Live
+                                View Live <Icon type="play" />
                             </a>
                         )}
                         {project.gitHub && (
                             <a
-                                className="secondary"
+                                className="button secondary"
                                 href={project.gitHub}
                                 target="_blank"
                                 rel="noreferrer"

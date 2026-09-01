@@ -1,4 +1,9 @@
-@use "./variables" as vars;
+$light-grey: #2c3b43;
+$dark-grey: #212a2d;
+$main-blue: #176287;
+$light-blue: #428db3;
+$white: #e0eaed;
+$yellow: #cb9b21;
 
 main {
     .main-image {
@@ -7,19 +12,25 @@ main {
     }
 
     .button-container {
-        width: 100%;
-
         display: flex;
-        button {
-            width: 50%;
-            padding: 32px;
+        justify-content: center;
+        margin-top: 8px;
+
+        a {
+            width: 165px;
+            // margin: 0px;
+        }
+
+        svg {
+            height: 20px;
+            margin-left: 8px;
         }
     }
 
     .technologies {
         display: flex;
         justify-content: center;
-        background-color: vars.$dark-grey;
+        background-color: $dark-grey;
         margin-top: 1.5rem;
         padding: 8px;
 
@@ -30,7 +41,7 @@ main {
     }
 
     .details {
-        background-color: vars.$dark-grey;
+        background-color: $dark-grey;
         padding: 3rem 3.5rem 3.5rem 3.5rem;
         margin-top: 2rem;
 
@@ -40,7 +51,7 @@ main {
             font-size: 1.75rem;
             font-weight: normal;
             text-decoration: underline;
-            text-decoration-color: vars.$main-blue;
+            text-decoration-color: $main-blue;
             text-underline-offset: 8px;
         }
 
